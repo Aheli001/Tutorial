@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Extensive ReactJS Roadmap Documentation</title>
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-HHsOCYseFbIzJ+jLdNt8Lidw1T+fLz2V5R3+Hc70F6RjQw07r8DJo8u6SbI0p1qMl0N5MfiPhw4O3x66j6b8lw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      /* Reset & global styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        height: 100vh; /* Ensure body covers full viewport height */
+        background: #f0f2f5;
+        color: #000;
+      }
+      /* Sidebar styling with independent scroll */
+      .sidebar {
+        width: 320px;
+        height: 100vh; /* full viewport height */
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: #fff;
+        padding: 20px;
+        overflow-y: scroll;
+      }
+      .sidebar::-webkit-scrollbar {
+        width: 8px;
+      }
+      .sidebar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+      }
+      .sidebar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 4px;
+      }
+      .sidebar h2 {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.8em;
+      }
+      .sidebar ul {
+        list-style: none;
+        padding-left: 10px;
+      }
+      .sidebar li {
+        margin: 5px 0;
+      }
+      .sidebar li a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+        font-size: 0.95em;
+      }
+      .sidebar li a:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      .sidebar ul ul {
+        margin-left: 15px;
+        border-left: 1px dashed rgba(255, 255, 255, 0.3);
+        padding-left: 10px;
+      }
+      /* Content area styling with independent scroll */
+      .content {
+        flex: 1;
+        height: 100vh; /* full viewport height */
+        padding: 20px 40px;
+        background: #fff;
+        overflow-y: scroll;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: justify;
+      }
+      .content h1 {
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .content p,
+      .content ul,
+      .content ol {
+        margin-bottom: 15px;
+        color: #000;
+        line-height: 1.8;
+      }
+      pre {
+        margin: auto;
+        overflow-x: auto;
+        font-size: 0.9em;
+      }
+      code {
+        font-family: Consolas, "Courier New", monospace;
+      }
+      .previous {
+        background: #eeeeee;
+        color: #333;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+      }
+      .next {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+      }
+      .contentHeading {
+        font-family: "Lato", sans-serif;
+        font-weight: 500;
+        font-size: 27px;
+        color: rgb(0, 0, 0);
+      }
+      .contentText {
+        font-family: "Verdana", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+      }
+      .subHeading {
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .contentText ul {
+        list-style: square;
+        padding: 0 40px;
+      }
+      .code-container {
+        position: relative;
+        background-color: #f4f4f4;
+        padding: 1em;
+        border-radius: 8px;
+        font-family: Consolas, monospace;
+        margin-bottom: 20px;
+      }
+
+      .copy-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        font-size: 12px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+      }
+
+      .copy-button:hover {
+        background-color: #0056b3;
+      }
+      .keyword {
+        color: #569cd6;
+      }
+
+      .function-name {
+        color: #dcdcaa;
+      }
+
+      .string {
+        color: #ce9178;
+      }
+
+      .tag {
+        color: #4ec9b0;
+      }
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        body {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+          height: 40vh;
+        }
+        .content {
+          height: 60vh;
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Left Navigation Sidebar -->
+    <div class="sidebar">
+      <h2>ReactJS Roadmap</h2>
+      <ul>
+        <li><a data-page="roadmap" onclick="loadContent('roadmap')">Overview</a></li>
+        <li>
+          <a data-page="introduction" href="#"
+            ><i class="fa-solid fa-lightbulb"></i> Introduction</a
+          >
+        </li>
+        <li><a data-page="features" href="#">ReactJS Features</a></li>
+        <li>
+          <a data-page="advantages" href="#">Advantages &amp; Disadvantages</a>
+        </li>
+        <li><a data-page="architecture" href="#">ReactJS Architecture</a></li>
+        <li><a data-page="installation" href="#">ReactJS Installation</a></li>
+        <li><a data-page="jsx" href="#">All About JSX</a></li>
+        <li>
+          <a data-page="components" href="#">ReactJS Components</a>
+          <ul>
+            <li><a data-page="firstApp" href="#">First ReactJS App</a></li>
+            <li>
+              <a data-page="nestedComponents" href="#">Nested Components</a>
+            </li>
+            <li>
+              <a data-page="usingComponents" href="#">Using Components</a>
+            </li>
+            <li>
+              <a data-page="componentCollection" href="#"
+                >Component Collection</a
+              >
+            </li>
+            <li>
+              <a data-page="stylingComponents" href="#">Styling Components</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a data-page="state" href="#">ReactJS State</a>
+          <ul>
+            <li>
+              <a data-page="stateManagementAPI" href="#"
+                >State Management API</a
+              >
+            </li>
+            <li>
+              <a data-page="statelessComponent" href="#">Stateless Component</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a data-page="props" href="#">ReactJS Props</a>
+          <ul>
+            <li>
+              <a data-page="componentProperties" href="#">Using Properties</a>
+            </li>
+            <li>
+              <a data-page="propsValidation" href="#">Props Validation</a>
+            </li>
+          </ul>
+        </li>
+        <li><a data-page="lifecycle" href="#">Component Life Cycle</a></li>
+        <li>
+          <a data-page="lists" href="#">ReactJS Lists</a>
+          <ul>
+            <li><a data-page="keys" href="#">ReactJS Keys</a></li>
+          </ul>
+        </li>
+        <li>
+          <a data-page="hooks" href="#">ReactJS Hooks</a>
+          <ul>
+            <li><a data-page="useState" href="#">useState</a></li>
+            <li><a data-page="useEffect" href="#">useEffect</a></li>
+            <li><a data-page="useContext" href="#">useContext</a></li>
+            <li><a data-page="useRef" href="#">useRef</a></li>
+            <li><a data-page="useReducer" href="#">useReducer</a></li>
+            <li><a data-page="useCallback" href="#">useCallback</a></li>
+            <li><a data-page="useMemo" href="#">useMemo</a></li>
+            <li><a data-page="customHooks" href="#">Custom Hooks</a></li>
+          </ul>
+        </li>
+        <li><a data-page="forms" href="#">ReactJS Forms</a></li>
+        <li>
+          <a data-page="reconciliation" href="#">ReactJS Reconciliation</a>
+        </li>
+        <li><a data-page="context" href="#">ReactJS Context</a></li>
+        <li>
+          <a data-page="events" href="#">ReactJS Events</a>
+          <ul>
+            <li>
+              <a data-page="eventsExpenseManager" href="#"
+                >Events in Expense Manager</a
+              >
+            </li>
+            <li><a data-page="createEvent" href="#">Create an Event</a></li>
+            <li>
+              <a data-page="controlledComponents" href="#"
+                >Controlled Components</a
+              >
+            </li>
+            <li>
+              <a data-page="uncontrolledComponents" href="#"
+                >Uncontrolled Components</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li><a data-page="lazyLoading" href="#">ReactJS Lazy Loading</a></li>
+        <li><a data-page="portals" href="#">ReactJS Portals</a></li>
+        <li><a data-page="keepPracticing" href="#">Keep Practicing</a></li>
+        <li><a data-page="routing" href="#">ReactJS Routing</a></li>
+        <li>
+          <a data-page="bestPractices" href="#">ReactJS Best Practices</a>
+        </li>
+        <li><a data-page="quickGuide" href="#">ReactJS Quick Guide</a></li>
+        <li>
+          <a data-page="stateManagementHooks" href="#"
+            >State Management Hooks</a
+          >
+        </li>
+        <li>
+          <a data-page="classVsFunctional" href="#"
+            >Class vs Functional Components</a
+          >
+        </li>
+        <li><a data-page="constructor" href="#">ReactJS Constructor</a></li>
+        <li>
+          <a data-page="conditionalRendering" href="#">Conditional Rendering</a>
+        </li>
+        <li>
+          <a data-page="howRoadmapHelps" href="#">How This Roadmap Helps You</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right Content Area -->
+    <div class="content" id="content-container">
+      <!-- Extended detailed content will load here dynamically -->
+    </div>
+
+    <!-- JavaScript for Dynamic Content -->
+    <!-- <script>
+      const docs = {
+        roadmap: `
+        <p>This ReactJS tutorial includes all of the most recent updates up to version 18.2.0 and covers every topic, from fundamental to advanced. React is the most recommended JavScript library to learn now because of its core foundation of features and large community.</p>
+        <h1 class="contentHeading">What is ReactJS?</h1>
+        <p class="contentText">ReactJS is an open-source JavaScript library for building dynamic and interactive user interfaces(UIs). React is developed and released by Facebook. Facebook is continuously working on the React library and enhancing it by fixing bugs and introducing new features.</p>
+        <h1 class="contentHeading">Who should learn ReactJS?</h1>
+        <p class="contentText">This tutorial is prepared for beginners to working professionals who are aspiring to make a career in the field of developing front-end web applications. This tutorial is intended to make you comfortable in getting started with the React concepts with examples.</p>
+        <h1 class="contentHeading">Why learn ReactJS?</h1>
+        <div class="contentText">
+        <p class="contentText">There are several reasons to learn ReactJS, as per the demand in the development industry of React developers and features React has to offer that can not be replaced by other frameworks or libraries.</p>
+        <ul>
+          <li>
+            <strong>Ease of Use:</strong> ReactJS does not require writing lengthy codes as it supports the Components concept so a small amount of code can be created and can be used in multiple places.
+          </li>
+          <li>
+            <strong>Multiple Module Support:</strong> There are so many modules in ReactJS that can be used to make your development more scalable, and manageable at a fast pace.
+          </li>
+          <li>
+            <strong>Multiple Apps Development:</strong> By using React knowledge we can create Web Pages, Web Apps, Mobile Apps, and VR Apps. There are a lot of websites that are using ReactJS like Airbnb, Cloudflare, Facebook, Instagram, etc.
+          </li>
+          <li>
+            <strong>Easy Migration:</strong> Because of its easy learning curve migration from other technologies became so easy. There are tons of resources to learn ReactJS from basics to advanced.
+          </li>
+          <li>
+            <strong>Large Community:</strong> ReactJS has one of the largest communities to help you when you are in trouble debugging your codes or get stuck learning new things.
+          </li>
+        </ul>
+      </div>
+      <h1 class="contentHeading">ReactJS Example Code</h1>
+      <p class="contentText">As this is sample code without the environment setup this code will not work to set up the ReactJS environment check ReactJS Installation article.</p>
+      <div class="code-container">
+  <button class="copy-button" onclick="copyCode()">Copy</button>
+  <pre><code id="reactCode">
+<span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;
+<span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom/client'</span>;
+
+<span class="keyword">function</span> <span class="function-name">Greeting</span>(props) {
+  <span class="keyword">return</span> <span class="tag">&lt;h1&gt;</span>Hello World!!<span class="tag">&lt;/h1&gt;</span>;
+}
+
+<span class="keyword">const</span> container = document.getElementById(<span class="string">"root"</span>);
+<span class="keyword">const</span> root = ReactDOM.createRoot(container);
+root.render(<span class="tag">&lt;Greeting /&gt;</span>);
+  </code></pre>
+</div>
+<h1 class="contentHeading">Features of ReactJS</h1>
+<div class="contentText">
+<p class="contentText">ReactJS plays an essential role in the front-end ecosystem. There are so many important features of ReactJS as it is the most demanding library for front-end development.</p>
+<ul>
+          <li>
+            <strong>Virtual DOM:</strong> Virtual DOM is a special kind of DOM that is used in ReactJS. Virtual DOM represents the real DOM of the current HTML document. Whenever there is a change in the HTML document, React checks the updated virtual DOM with the previous state of the Virtual DOM and updates only the difference in th actual/real DOM.
+          </li>
+          <li>
+            <strong>Reusable Components:</strong> Components need to be written a single time and can be used multiple times by just calling that component where we require that component.
+          </li>
+          <li>
+            <strong>One-Way Data Binding:</strong> One-way data binding prevents the data in a component from flowing backward. A component can pass the data to its child component only. This will simplify the data handling and reduce the complexity.
+          </li>
+        </ul>
+</div>
+<p class="contentText">To know more about the features of ReactJS please check ReactJS Features article.</p>
+      `,
+        introduction: `
+      <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+    <button class="previous" onclick="handlePrevious()">Previous</button>
+    <button class="next" onclick="handleNext()">Next</button>
+  </div>
+<h1>ReactJS Introduction</h1>
+<p>ReactJS is an open-source JavaScript library developed by Facebook for building modern, interactive UIs. It focuses on building UI components that encapsulate their own logic and presentation, making code more modular and easier to maintain.</p>
+<p>One of React’s key innovations is the Virtual DOM, an in-memory representation of the UI that allows efficient updating of the real DOM. This improvement in performance, along with a declarative programming model, sets React apart in the realm of front-end development.</p>
+<pre><code>
+import React from 'react';
+
+function Welcome() {
+  return &lt;h1&gt;Welcome to ReactJS!&lt;/h1&gt;;
+}
+
+export default Welcome;
+</code></pre>
+<p>This introductory section sets the groundwork by explaining the core concepts of component-based development and why React has become one of the most popular libraries for building user interfaces.</p>
+      `,
+        features: `
+<h1>ReactJS Features</h1>
+<p>ReactJS offers a wide range of features that streamline the development of dynamic user interfaces:</p>
+<ul>
+  <li><strong>Virtual DOM:</strong> An in-memory representation of the DOM that optimizes updates and minimizes direct manipulation of the browser DOM.</li>
+  <li><strong>Component-Based Architecture:</strong> Build encapsulated, reusable components that manage their own state and compose them to form complex UIs.</li>
+  <li><strong>Declarative Views:</strong> Describe your UI for a given state, and React will efficiently update and render the components when that state changes.</li>
+  <li><strong>JSX Syntax:</strong> A syntax extension that allows you to write HTML-like code directly within your JavaScript, making the code easier to understand and maintain.</li>
+</ul>
+<p>These features work together to make React an efficient and flexible tool for building modern web applications. The following example demonstrates a simple header component:</p>
+<pre><code>
+import React from 'react';
+
+function Header() {
+  return &lt;header&gt;&lt;h1&gt;My React App&lt;/h1&gt;&lt;/header&gt;;
+}
+
+export default Header;
+</code></pre>
+<p>The synergy of these features is what has driven React’s popularity among developers.</p>
+      `,
+        advantages: `
+<h1>Advantages &amp; Disadvantages of ReactJS</h1>
+<p>Before you dive deep, it’s important to understand both the strengths and limitations of ReactJS.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+  <li><strong>Reusable Components:</strong> Modular components allow you to reuse code and reduce development time.</li>
+  <li><strong>Efficient Performance:</strong> The Virtual DOM ensures that updates are efficient and only the necessary parts are re-rendered.</li>
+  <li><strong>Declarative Approach:</strong> Simplifies code by clearly expressing the UI state and behavior.</li>
+  <li><strong>Vibrant Ecosystem:</strong> A large community and comprehensive libraries support rapid development and troubleshooting.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+  <li><strong>Steep Learning Curve:</strong> Concepts such as JSX and hooks may initially be challenging for beginners.</li>
+  <li><strong>Frequent Changes:</strong> Rapid evolution of best practices and APIs may require ongoing learning.</li>
+  <li><strong>Tooling Complexity:</strong> Advanced applications may involve additional libraries for state management and routing, increasing complexity.</li>
+</ul>
+<p>For example, a reusable button component exemplifies React’s reusability:</p>
+<pre><code>
+import React from 'react';
+
+function Button({ label, onClick }) {
+  return &lt;button onClick={onClick}&gt;{label}&lt;/button&gt;;
+}
+
+export default Button;
+</code></pre>
+<p>Understanding these pros and cons helps you make an informed decision on using React for your projects.</p>
+      `,
+        architecture: `
+<h1>ReactJS Architecture</h1>
+<p>React’s architecture is centered on building UI using components that encapsulate both logic and presentation. Key aspects include:</p>
+<ul>
+  <li><strong>Components:</strong> Independent units that can be reused and composed to build complex interfaces.</li>
+  <li><strong>Virtual DOM:</strong> A lightweight copy of the DOM used to optimize rendering and updates.</li>
+  <li><strong>One-Way Data Flow:</strong> Simplifies data management by restricting data flow from parent to child components.</li>
+  <li><strong>Lifecycle Methods:</strong> In class components, lifecycle methods allow you to execute code at specific phases, such as mounting, updating, or unmounting.</li>
+</ul>
+<p>Here is an example that demonstrates a basic component hierarchy:</p>
+<pre><code>
+import React from 'react';
+
+function Header() {
+  return &lt;header&gt;&lt;h1&gt;Welcome to My App&lt;/h1&gt;&lt;/header&gt;;
+}
+
+function Footer() {
+  return &lt;footer&gt;&lt;p&gt;Footer details here.&lt;/p&gt;&lt;/footer&gt;;
+}
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Header /&gt;
+      &lt;p&gt;Main content goes here.&lt;/p&gt;
+      &lt;Footer /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>This design makes it easier to scale and maintain large applications by separating concerns.</p>
+      `,
+        installation: `
+<h1>ReactJS Installation</h1>
+<p>Installing ReactJS is simple with <code>create-react-app</code>, which sets up the project with all necessary configurations.</p>
+<ol>
+  <li><strong>Install Node.js and npm:</strong> Download them from <a href="https://nodejs.org" target="_blank">nodejs.org</a>.</li>
+  <li><strong>Create a New Project:</strong> Run <code>npx create-react-app my-app</code> in the terminal.</li>
+  <li><strong>Navigate to Your Project:</strong> Use <code>cd my-app</code> to enter the project directory.</li>
+  <li><strong>Start the Server:</strong> Launch the development server with <code>npm start</code> and view your app at <code>http://localhost:3000</code>.</li>
+</ol>
+<p>This automated process sets up Babel, Webpack, and other tools, so you can immediately start building your application without additional configuration hassles.</p>
+      `,
+        jsx: `
+<h1>All About JSX</h1>
+<p>JSX (JavaScript XML) is a syntax extension that lets you write HTML-like code inside your JavaScript code. It makes writing React components more intuitive and greatly simplifies the structure of your UI logic.</p>
+<pre><code>
+import React from 'react';
+
+function Greeting({ name }) {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello, {name}!&lt;/h1&gt;
+      &lt;p&gt;Welcome to React and JSX.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Greeting;
+</code></pre>
+<p>By intermixing HTML and JavaScript, JSX enables you to build more readable and maintainable UI components without compromising the power of JavaScript.</p>
+      `,
+        components: `
+<h1>ReactJS Components</h1>
+<p>Components are the fundamental units of a React application. They combine HTML, CSS, and JavaScript to create reusable UI elements.</p>
+<p>React supports two types of components:</p>
+<ul>
+  <li><strong>Functional Components:</strong> Simple functions that accept props and return JSX.</li>
+  <li><strong>Class Components:</strong> ES6 classes that extend <code>React.Component</code> and can hold their own state and lifecycle methods.</li>
+</ul>
+<pre><code>
+import React from 'react';
+
+function Greeting({ name }) {
+  return &lt;h1&gt;Hello, {name}!&lt;/h1&gt;;
+}
+
+export default Greeting;
+</code></pre>
+<p>Components allow for a modular design that enhances maintainability and reuse across your application.</p>
+      `,
+        firstApp: `
+<h1>Building Your First ReactJS App</h1>
+<p>This section walks you through creating your very first React application using <code>create-react-app</code>. It covers the essential steps from setup to running a simple component.</p>
+<pre><code>
+// App.js
+import React from 'react';
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Welcome to Your First React App&lt;/h1&gt;
+      &lt;p&gt;Explore React by building this basic application.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>Once you run <code>npm start</code>, your new app will open in the browser, allowing you to see the live version of your work.</p>
+      `,
+        nestedComponents: `
+<h1>Nested Components</h1>
+<p>Nesting components is a core concept in React that enables you to build complex UIs by combining smaller, reusable components. This approach aids in maintaining a clean separation of concerns.</p>
+<pre><code>
+import React from 'react';
+
+function Header() {
+  return &lt;header&gt;&lt;h1&gt;My Application Header&lt;/h1&gt;&lt;/header&gt;;
+}
+
+function Content() {
+  return &lt;main&gt;&lt;p&gt;Main content is displayed here.&lt;/p&gt;&lt;/main&gt;;
+}
+
+function Footer() {
+  return &lt;footer&gt;&lt;p&gt;Footer content goes here.&lt;/p&gt;&lt;/footer&gt;;
+}
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Header /&gt;
+      &lt;Content /&gt;
+      &lt;Footer /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>This practice makes your UI easier to scale and maintain, as each component is responsible for a single portion of the interface.</p>
+      `,
+        usingComponents: `
+<h1>Using Components Effectively</h1>
+<p>This section explains how to import and reuse components throughout your application. Reusable components save time and ensure consistent styling and behavior.</p>
+<pre><code>
+// Button.js
+import React from 'react';
+
+function Button({ text, onClick }) {
+  return &lt;button onClick={onClick}&gt;{text}&lt;/button&gt;;
+}
+
+export default Button;
+</code></pre>
+<pre><code>
+// App.js
+import React from 'react';
+import Button from './Button';
+
+function App() {
+  const handleClick = () => alert('Button clicked!');
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Component Usage Example&lt;/h1&gt;
+      &lt;Button text="Click Me" onClick={handleClick} /&gt;
+      &lt;Button text="Another Button" onClick={handleClick} /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>This pattern not only promotes reuse but also simplifies testing and global updates.</p>
+      `,
+        componentCollection: `
+<h1>Component Collection and Organization</h1>
+<p>As your project grows, organizing your components effectively becomes essential for maintaining a scalable codebase. Grouping components into dedicated folders like <code>components</code>, <code>containers</code>, and <code>utils</code> can greatly enhance maintainability.</p>
+<pre><code>
+my-app/
+├── src/
+│   ├── components/
+│   │   ├── Button.js
+│   │   ├── Input.js
+│   │   └── Card.js
+│   ├── containers/
+│   │   └── Dashboard.js
+│   └── App.js
+</code></pre>
+<p>Keeping a well-organized component library speeds up development and enables better collaboration among team members.</p>
+      `,
+        stylingComponents: `
+<h1>Styling ReactJS Components</h1>
+<p>There are multiple approaches to styling in React, including using traditional CSS, CSS Modules, inline styles, and libraries like styled-components. This section explains each method with detailed examples.</p>
+<p>For instance, CSS Modules provide component-level scoping which prevents style conflicts:</p>
+<pre><code>
+// MyComponent.module.css
+.container {
+  background-color: #e0f7fa;
+  padding: 20px;
+  border: 1px solid #00838f;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+</code></pre>
+<pre><code>
+// MyComponent.js
+import React from 'react';
+import styles from './MyComponent.module.css';
+
+function MyComponent() {
+  return &lt;div className={styles.container}&gt;Styled using CSS Modules.&lt;/div&gt;;
+}
+
+export default MyComponent;
+</code></pre>
+<p>This method helps to keep the styling encapsulated and prevents conflicts with global styles.</p>
+      `,
+        state: `
+<h1>Understanding ReactJS State</h1>
+<p>State is the mechanism for storing dynamic data in a component. It allows your application to respond to user interactions, API calls, and other events by triggering re-renders.</p>
+<p>Below is an example of a class component that uses state to create a counter:</p>
+<pre><code>
+import React from 'react';
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  }
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Current Count: {this.state.count}&lt;/p&gt;
+        &lt;button onClick={this.increment}&gt;Increment&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default Counter;
+</code></pre>
+<p>This detailed explanation covers initializing, updating, and rendering state, which is essential for creating interactive interfaces.</p>
+      `,
+        stateManagementAPI: `
+<h1>ReactJS State Management API</h1>
+<p>React’s state management APIs, such as <code>setState</code> and the <code>useState</code> hook, offer efficient ways to update and merge state. They ensure that only the changed portions of the state are updated, thus optimizing performance.</p>
+<pre><code>
+import React from 'react';
+
+class CounterExample extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { counter: 0, status: 'even' };
+  }
+  updateCounter = () => {
+    this.setState((prevState) => {
+      const newCount = prevState.counter + 1;
+      return {
+        counter: newCount,
+        status: newCount % 2 === 0 ? 'even' : 'odd'
+      };
+    });
+  }
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Counter: {this.state.counter}&lt;/p&gt;
+        &lt;p&gt;Status: {this.state.status}&lt;/p&gt;
+        &lt;button onClick={this.updateCounter}&gt;Update Counter&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default CounterExample;
+</code></pre>
+<p>This explanation clarifies how React efficiently manages state updates and why the updater function is recommended when the new state depends on the previous state.</p>
+      `,
+        statelessComponent: `
+<h1>Stateless (Functional) Components</h1>
+<p>Stateless components are simple functions that render UI based solely on the props they receive. They do not manage any internal state, making them easy to test and maintain.</p>
+<p>Here is an extended example of a functional component:</p>
+<pre><code>
+import React from 'react';
+
+function MessageDisplay({ message }) {
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;Message:&lt;/h2&gt;
+      &lt;p&gt;{message}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default MessageDisplay;
+</code></pre>
+<p>This example emphasizes the simplicity and reusability of stateless components.</p>
+      `,
+        props: `
+<h1>ReactJS Props</h1>
+<p>Props are the inputs to a component, allowing data to be passed from parent to child. They are read-only and ensure that components are rendered with the correct configuration.</p>
+<pre><code>
+import React from 'react';
+
+function Profile({ username, bio, avatarUrl }) {
+  return (
+    &lt;div&gt;
+      &lt;img src={avatarUrl} alt={username} style={{ width: '100px', borderRadius: '50%' }} /&gt;
+      &lt;h2&gt;{username}&lt;/h2&gt;
+      &lt;p&gt;{bio}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+Profile.defaultProps = {
+  bio: "Bio information not available."
+};
+
+export default Profile;
+</code></pre>
+<p>This section explains how to work with props and why they are essential for making components flexible and reusable.</p>
+      `,
+        componentProperties: `
+<h1>Using Component Properties</h1>
+<p>This section further details how components use props (properties) to configure their behavior. It covers setting default values and validating prop types for more robust and predictable components.</p>
+<pre><code>
+import React from 'react';
+import PropTypes from 'prop-types';
+
+function UserCard({ name, email, role }) {
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;{name}&lt;/h3&gt;
+      &lt;p&gt;Email: {email}&lt;/p&gt;
+      &lt;p&gt;Role: {role}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+UserCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  role: PropTypes.string
+};
+
+UserCard.defaultProps = {
+  role: 'Viewer'
+};
+
+export default UserCard;
+</code></pre>
+<p>This comprehensive treatment makes your components more reliable by ensuring they receive proper data.</p>
+      `,
+        propsValidation: `
+<h1>Props Validation</h1>
+<p>Props validation, often implemented using PropTypes, ensures that your component receives the correct data types. This practice helps in catching errors early and improves code quality.</p>
+<pre><code>
+import React from 'react';
+import PropTypes from 'prop-types';
+
+function Notification({ message, level }) {
+  return &lt;div className={\`notification \${level}\`}&gt;{message}&lt;/div&gt;;
+}
+
+Notification.propTypes = {
+  message: PropTypes.string.isRequired,
+  level: PropTypes.oneOf(['info', 'warning', 'error']).isRequired
+};
+
+Notification.defaultProps = {
+  level: 'info'
+};
+
+export default Notification;
+</code></pre>
+<p>This section highlights the importance of ensuring that components adhere to the expected API in terms of data types.</p>
+      `,
+        lifecycle: `
+<h1>Component Life Cycle</h1>
+<p>Every React component goes through a lifecycle that includes mounting, updating, and unmounting phases. Understanding these stages helps you manage side effects, initialize data, and clean up resources efficiently.</p>
+<pre><code>
+import React from 'react';
+
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { time: new Date() };
+  }
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000);
+  }
+  componentDidUpdate(prevProps, prevState) {
+    // Additional operations can be performed here
+  }
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+  tick() {
+    this.setState({ time: new Date() });
+  }
+  render() {
+    return &lt;h1&gt;It is {this.state.time.toLocaleTimeString()}&lt;/h1&gt;;
+  }
+}
+
+export default Clock;
+</code></pre>
+<p>This extensive explanation ensures you understand how and when to use lifecycle methods to manage your component’s behavior.</p>
+      `,
+        lists: `
+<h1>ReactJS Lists</h1>
+<p>Lists are a common way to display data in React applications. By using JavaScript’s <code>map</code> function, you can dynamically render arrays as lists of elements. It is crucial to assign a unique key to each element for efficient updating.</p>
+<pre><code>
+import React from 'react';
+
+function TodoList({ todos }) {
+  return (
+    &lt;ul&gt;
+      {todos.map(todo =&gt; (
+        &lt;li key={todo.id}&gt;{todo.task}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+export default TodoList;
+</code></pre>
+<p>This section elaborates on best practices for rendering lists and handling dynamic data updates.</p>
+      `,
+        keys: `
+<h1>ReactJS Keys</h1>
+<p>Keys help React identify which items in a list have been altered, added, or removed. They are essential for optimizing rendering performance by ensuring minimal DOM updates.</p>
+<pre><code>
+const items = [
+  { id: 1, name: 'Apple' },
+  { id: 2, name: 'Banana' },
+  { id: 3, name: 'Cherry' }
+];
+
+function FruitList() {
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+export default FruitList;
+</code></pre>
+<p>This detailed discussion clarifies how to choose unique keys for each element to ensure the efficient re-rendering of lists.</p>
+      `,
+        hooks: `
+<h1>ReactJS Hooks</h1>
+<p>Hooks allow you to use state and other React features without writing a class. They have transformed modern React development by simplifying component logic and making functional components more powerful.</p>
+<pre><code>
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() => setCount(count + 1)}&gt;Increment&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Counter;
+</code></pre>
+<p>This extensive explanation of hooks shows you how to integrate state and side-effects into functional components without the need for classes.</p>
+      `,
+        useState: `
+<h1>useState Hook</h1>
+<p>The <code>useState</code> hook is the primary way to add state to functional components. It returns a pair: the current state value and a function to update it.</p>
+<pre><code>
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Current Count: {count}&lt;/p&gt;
+      &lt;button onClick={() => setCount(count + 1)}&gt;Increase&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Counter;
+</code></pre>
+<p>This section dives deeper into common patterns, initializations, and pitfalls when using <code>useState</code>.</p>
+      `,
+        useEffect: `
+<h1>useEffect Hook</h1>
+<p>The <code>useEffect</code> hook enables you to perform side effects in your functional components, such as data fetching and subscriptions. It can replace lifecycle methods like <code>componentDidMount</code> and <code>componentWillUnmount</code> from class components.</p>
+<pre><code>
+import React, { useState, useEffect } from 'react';
+
+function DataFetcher() {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch('https://api.example.com/data')
+      .then(res => res.json())
+      .then(result => setData(result));
+  }, []);
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;Fetched Data:&lt;/h2&gt;
+      {data ? &lt;p&gt;{JSON.stringify(data)}&lt;/p&gt; : &lt;p&gt;Loading...&lt;/p&gt;}
+    &lt;/div&gt;
+  );
+}
+
+export default DataFetcher;
+</code></pre>
+<p>This detailed example explains the dependency array and cleanup functionality, ensuring that your side effects are correctly handled.</p>
+      `,
+        useContext: `
+<h1>useContext Hook</h1>
+<p>The <code>useContext</code> hook provides a way for functional components to consume context. It makes it easier to pass data through the component tree without manually drilling props at every level.</p>
+<pre><code>
+import React, { createContext, useContext } from 'react';
+
+const ThemeContext = createContext('light');
+
+function ThemedButton() {
+  const theme = useContext(ThemeContext);
+  return &lt;button className={theme}&gt;I am styled by theme context!&lt;/button&gt;;
+}
+
+function App() {
+  return (
+    &lt;ThemeContext.Provider value="dark"&gt;
+      &lt;ThemedButton /&gt;
+    &lt;/ThemeContext.Provider&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>This comprehensive explanation illustrates how context can simplify your code and enhance data sharing among components.</p>
+      `,
+        useRef: `
+<h1>useRef Hook</h1>
+<p>The <code>useRef</code> hook allows you to create mutable variables that persist across renders. It’s particularly useful for directly accessing DOM elements or storing mutable values without causing re-renders.</p>
+<pre><code>
+import React, { useRef, useEffect } from 'react';
+
+function FocusInput() {
+  const inputRef = useRef(null);
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+  return &lt;input ref={inputRef} type="text" placeholder="Input focused on mount" /&gt;;
+}
+
+export default FocusInput;
+</code></pre>
+<p>This in-depth explanation details various use cases for <code>useRef</code> and shows how it helps with DOM manipulation and persistent mutable values.</p>
+      `,
+        useReducer: `
+<h1>useReducer Hook</h1>
+<p>The <code>useReducer</code> hook is ideal for managing complex state logic in functional components, similar to how Redux manages state. It uses a reducer function to determine how the state should be updated based on dispatched actions.</p>
+<pre><code>
+import React, { useReducer } from 'react';
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {state.count}&lt;/p&gt;
+      &lt;button onClick={() => dispatch({ type: 'increment' })}&gt;Increment&lt;/button&gt;
+      &lt;button onClick={() => dispatch({ type: 'decrement' })}&gt;Decrement&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Counter;
+</code></pre>
+<p>This detailed explanation shows how to centralize state logic, making state updates more predictable and easier to manage.</p>
+      `,
+        useCallback: `
+<h1>useCallback Hook</h1>
+<p>The <code>useCallback</code> hook returns a memoized version of a callback function that only changes if its dependencies change. This can help you prevent unnecessary re-renders, especially in components optimized with <code>React.memo</code>.</p>
+<pre><code>
+import React, { useState, useCallback } from 'react';
+
+function ExpensiveComponent({ handleClick }) {
+  return &lt;button onClick={handleClick}&gt;Click Me&lt;/button&gt;;
+}
+
+function App() {
+  const [count, setCount] = useState(0);
+  const memoizedCallback = useCallback(() => {
+    setCount(prevCount => prevCount + 1);
+  }, []);
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;ExpensiveComponent handleClick={memoizedCallback} /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>This explanation details how <code>useCallback</code> helps in maintaining stable function references, which is key for performance optimization in React.</p>
+      `,
+        useMemo: `
+<h1>useMemo Hook</h1>
+<p>The <code>useMemo</code> hook memoizes expensive computations so that they are only recalculated when their dependencies change. This is especially useful for performance-critical operations.</p>
+<pre><code>
+import React, { useMemo, useState } from 'react';
+
+function Fibonacci({ n }) {
+  const fib = useMemo(() => {
+    const calculateFib = (num) => {
+      if (num <= 1) return num;
+      return calculateFib(num - 1) + calculateFib(num - 2);
+    };
+    return calculateFib(n);
+  }, [n]);
+  return &lt;p&gt;Fibonacci of {n} is {fib}&lt;/p&gt;;
+}
+
+function App() {
+  const [number, setNumber] = useState(10);
+  return (
+    &lt;div&gt;
+      &lt;Fibonacci n={number} /&gt;
+      &lt;button onClick={() => setNumber(number + 1)}&gt;Next&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>This example shows how <code>useMemo</code> can significantly reduce unnecessary computations in your application.</p>
+      `,
+        customHooks: `
+<h1>Custom Hooks</h1>
+<p>Custom hooks allow you to extract component logic into reusable functions. They adhere to the same rules as built-in hooks but let you share complex logic among multiple components without duplicating code.</p>
+<pre><code>
+import { useState, useEffect } from 'react';
+
+function useWindowSize() {
+  const [size, setSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+  useEffect(() => {
+    const handleResize = () => {
+      setSize({ width: window.innerWidth, height: window.innerHeight });
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  return size;
+}
+
+export default useWindowSize;
+</code></pre>
+<p>This detailed guide shows how custom hooks encapsulate logic and promote code reuse, streamlining your components.</p>
+      `,
+        forms: `
+<h1>ReactJS Forms</h1>
+<p>Forms are essential for collecting user input. In React, the controlled component approach is generally preferred, where form elements' values are bound to component state, ensuring a single source of truth.</p>
+<pre><code>
+import React, { useState } from 'react';
+
+function ExpenseForm() {
+  const [formData, setFormData] = useState({ title: '', amount: '', date: '' });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert('Submitted Data: ' + JSON.stringify(formData, null, 2));
+  };
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;label&gt;Title:&lt;/label&gt;
+      &lt;input type="text" name="title" value={formData.title} onChange={handleChange} /&gt;
+      &lt;label&gt;Amount:&lt;/label&gt;
+      &lt;input type="number" name="amount" value={formData.amount} onChange={handleChange} /&gt;
+      &lt;label&gt;Date:&lt;/label&gt;
+      &lt;input type="date" name="date" value={formData.date} onChange={handleChange} /&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+
+export default ExpenseForm;
+</code></pre>
+<p>This extended explanation covers how controlled forms maintain data consistency and facilitate validation in React applications.</p>
+      `,
+        reconciliation: `
+<h1>ReactJS Reconciliation</h1>
+<p>Reconciliation is the process by which React updates the browser's DOM. It compares the new Virtual DOM with the previous version and updates only the parts that have changed, thus minimizing performance overhead.</p>
+<pre><code>
+// Pseudocode illustrating the reconciliation process:
+function reconcile(oldTree, newTree) {
+  // Compare oldTree and newTree
+  // Identify minimal changes
+  // Update the actual DOM accordingly
+}
+</code></pre>
+<p>This in-depth explanation shows how the diffing algorithm works, helping you understand performance optimizations in React.</p>
+      `,
+        context: `
+<h1>ReactJS Context</h1>
+<p>Context provides a way to pass data through the component tree without manually drilling props at every level. It is particularly useful for global data like user information, themes, or localization settings.</p>
+<pre><code>
+import React, { createContext, useContext } from 'react';
+
+const UserContext = createContext();
+
+function UserProfile() {
+  const user = useContext(UserContext);
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;User Profile&lt;/h2&gt;
+      &lt;p&gt;Name: {user.name}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+function App() {
+  const user = { name: 'Jane Doe', age: 29 };
+  return (
+    &lt;UserContext.Provider value={user}&gt;
+      &lt;UserProfile /&gt;
+    &lt;/UserContext.Provider&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>This comprehensive explanation demonstrates how to leverage context for cleaner, more maintainable state sharing across multiple components.</p>
+      `,
+        events: `
+<h1>ReactJS Events</h1>
+<p>Events are the way React applications handle user interactions. React’s synthetic event system normalizes browser events for consistent handling across different environments.</p>
+<pre><code>
+import React from 'react';
+
+function ClickExample() {
+  const handleClick = () => {
+    alert('The button was clicked!');
+  };
+  return &lt;button onClick={handleClick}&gt;Click Me&lt;/button&gt;;
+}
+
+export default ClickExample;
+</code></pre>
+<p>This section explains common event patterns, how to attach event listeners, and best practices for managing event data.</p>
+      `,
+        eventsExpenseManager: `
+<h1>Events in Expense Manager</h1>
+<p>This section provides a practical example of handling events in an Expense Manager application. It demonstrates how to add interactivity by highlighting rows in a table when the user hovers over them.</p>
+<pre><code>
+import React from 'react';
+import './ExpenseEntryItemList.css';
+
+class ExpenseEntryItemList extends React.Component {
+  handleMouseEnter = (e) => {
+    e.target.parentNode.classList.add("highlight");
+  }
+  handleMouseLeave = (e) => {
+    e.target.parentNode.classList.remove("highlight");
+  }
+  render() {
+    const { items } = this.props;
+    const rows = items.map(item => (
+      &lt;tr key={item.id} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}&gt;
+        &lt;td&gt;{item.name}&lt;/td&gt;
+        &lt;td&gt;{item.amount}&lt;/td&gt;
+        &lt;td&gt;{new Date(item.spendDate).toLocaleDateString()}&lt;/td&gt;
+        &lt;td&gt;{item.category}&lt;/td&gt;
+      &lt;/tr&gt;
+    ));
+    return (
+      &lt;table&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Item&lt;/th&gt;
+            &lt;th&gt;Amount&lt;/th&gt;
+            &lt;th&gt;Date&lt;/th&gt;
+            &lt;th&gt;Category&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;{rows}&lt;/tbody&gt;
+      &lt;/table&gt;
+    );
+  }
+}
+
+export default ExpenseEntryItemList;
+</code></pre>
+<p>This example details how event handlers can modify the UI in response to user actions.</p>
+      `,
+        createEvent: `
+<h1>Create an Event</h1>
+<p>Creating custom events involves defining handlers that encapsulate specific logic and attaching them to UI elements. This section explains how to create an event handler and bind it properly.</p>
+<pre><code>
+import React from 'react';
+
+function CustomEventButton() {
+  const handleCustomEvent = (event) => {
+    console.log('Custom event triggered:', event);
+    alert('Custom event fired successfully!');
+  };
+  return &lt;button onClick={handleCustomEvent}&gt;Trigger Event&lt;/button&gt;;
+}
+
+export default CustomEventButton;
+</code></pre>
+<p>This comprehensive section explains the importance of binding, passing parameters, and ensuring that the event handler works as expected.</p>
+      `,
+        controlledComponents: `
+<h1>Controlled Components</h1>
+<p>Controlled components are form elements that are completely driven by React state. Every change in the input is captured by an onChange event, and the state is updated accordingly. This approach provides complete control over the form data.</p>
+<pre><code>
+import React, { useState } from 'react';
+
+function NameForm() {
+  const [name, setName] = useState('');
+  const handleChange = (event) => {
+    setName(event.target.value);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert('A name was submitted: ' + name);
+  };
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;label&gt;Name:&lt;/label&gt;
+      &lt;input type="text" value={name} onChange={handleChange} /&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+
+export default NameForm;
+</code></pre>
+<p>This section details how controlled components provide a single source of truth, making form data management predictable and easier to validate.</p>
+      `,
+        uncontrolledComponents: `
+<h1>Uncontrolled Components</h1>
+<p>Unlike controlled components, uncontrolled components maintain their own internal state through the DOM. They typically use refs to access values and offer a simpler approach when you do not need to update the UI dynamically based on input changes.</p>
+<pre><code>
+import React, { useRef } from 'react';
+
+function UncontrolledForm() {
+  const inputRef = useRef(null);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert('Uncontrolled input value: ' + inputRef.current.value);
+  };
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;label&gt;Input:&lt;/label&gt;
+      &lt;input type="text" ref={inputRef} /&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+
+export default UncontrolledForm;
+</code></pre>
+<p>This explanation covers the advantages and trade-offs of uncontrolled components.</p>
+      `,
+        lazyLoading: `
+<h1>ReactJS Lazy Loading</h1>
+<p>Lazy loading is a powerful technique to optimize your React application's performance by delaying the loading of non-critical components until they are needed.</p>
+<pre><code>
+import React, { Suspense } from 'react';
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Lazy Loading Example&lt;/h1&gt;
+      &lt;Suspense fallback=&lt;div&gt;Loading...&lt;/div&gt;&gt;
+        &lt;LazyComponent /&gt;
+      &lt;/Suspense&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>This section describes how lazy loading works and its benefits in reducing the initial load time of your application.</p>
+      `,
+        portals: `
+<h1>ReactJS Portals</h1>
+<p>Portals let you render children into a DOM node that exists outside the main DOM hierarchy of your parent component. This is especially useful for modals, pop-ups, and overlays, where you don’t want the content confined by parent styles.</p>
+<pre><code>
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function Modal({ children }) {
+  return ReactDOM.createPortal(
+    &lt;div className="modal"&gt;{children}&lt;/div&gt;,
+    document.getElementById('modal-root')
+  );
+}
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Portal Demonstration&lt;/h1&gt;
+      &lt;Modal&gt;&lt;p&gt;This content is rendered outside the main DOM hierarchy.&lt;/p&gt;&lt;/Modal&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>This extensive guide explains how portals separate overlay content from the main document flow for better styling and management.</p>
+      `,
+        keepPracticing: `
+<h1>Keep Practicing</h1>
+<p>Practice is essential for mastering React. This section offers project ideas and suggestions for applying all the concepts you learn:</p>
+<ul>
+  <li>Build a to-do list with CRUD operations using state and hooks.</li>
+  <li>Create a blog site with dynamic loading of posts and comments.</li>
+  <li>Develop a weather app that fetches data from an API and displays it with custom styling.</li>
+  <li>Rebuild an expense manager app to practice controlled forms, event handling, and state management.</li>
+</ul>
+<p>The more projects you build, the more proficient you’ll become at integrating React’s features into real-world applications.</p>
+      `,
+        routing: `
+<h1>ReactJS Routing</h1>
+<p>Routing allows you to create a single-page application (SPA) that can navigate between different views without a full page reload. Using libraries like React Router, you can define routes, pass parameters, and nest routes.</p>
+<pre><code>
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+
+function App() {
+  return (
+    &lt;Router&gt;
+      &lt;nav&gt;
+        &lt;Link to="/"&gt;Home&lt;/Link&gt;
+        &lt;Link to="/about"&gt;About&lt;/Link&gt;
+      &lt;/nav&gt;
+      &lt;Routes&gt;
+        &lt;Route path="/" element=&lt;Home /&gt; /&gt;
+        &lt;Route path="/about" element=&lt;About /&gt; /&gt;
+      &lt;/Routes&gt;
+    &lt;/Router&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>This detailed explanation covers the basics as well as advanced topics, ensuring smooth navigation across your app.</p>
+      `,
+        bestPractices: `
+<h1>ReactJS Best Practices</h1>
+<p>Following best practices is critical to building scalable and maintainable React applications. This section outlines guidelines on component design, state management, performance optimization, and code organization.</p>
+<ul>
+  <li>Keep components focused and modular.</li>
+  <li>Favor functional components and hooks for cleaner code.</li>
+  <li>Use consistent naming conventions and folder structures.</li>
+  <li>Optimize performance by memoizing components using <code>React.memo</code>, <code>useCallback</code>, and <code>useMemo</code>.</li>
+  <li>Document your components and validate props to minimize errors.</li>
+</ul>
+<pre><code>
+// Example: Optimizing a component with React.memo
+import React from 'react';
+
+const OptimizedComponent = React.memo(({ data }) => {
+  return &lt;div&gt;{data}&lt;/div&gt;;
+});
+
+export default OptimizedComponent;
+</code></pre>
+<p>This guide explains why these practices are important and how they can improve your application’s long-term maintainability.</p>
+      `,
+        quickGuide: `
+<h1>ReactJS Quick Guide</h1>
+<p>This quick guide provides a brief refresher on React’s core concepts including JSX, components, state, and hooks. It is intended as a fast reference for daily development tasks.</p>
+<pre><code>
+import React, { useState } from 'react';
+
+function QuickGreeting() {
+  const [name, setName] = useState('React Developer');
+  return &lt;h1&gt;Hello, {name}!&lt;/h1&gt;;
+}
+
+export default QuickGreeting;
+</code></pre>
+<p>This concise summary helps you quickly recall key patterns and implementations in React development.</p>
+      `,
+        stateManagementHooks: `
+<h1>State Management Hooks</h1>
+<p>This section dives into the hooks used for state management, such as <code>useState</code> and <code>useReducer</code>. It provides detailed examples of managing both simple and complex state logic in functional components.</p>
+<pre><code>
+import React, { useState, useReducer } from 'react';
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'update':
+      return { ...state, value: action.payload };
+    default:
+      return state;
+  }
+}
+
+function ComplexState() {
+  const [count, setCount] = useState(0);
+  const [state, dispatch] = useReducer(reducer, { value: '' });
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() => setCount(count + 1)}&gt;Increment&lt;/button&gt;
+      &lt;input value={state.value} onChange={e => dispatch({ type: 'update', payload: e.target.value })} /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default ComplexState;
+</code></pre>
+<p>This explanation helps you choose the right state management hook based on the complexity of your state logic.</p>
+      `,
+        classVsFunctional: `
+<h1>Class vs Functional Components</h1>
+<p>This comparison outlines the differences between class-based components and functional components. It explores their respective advantages and offers insights on when to use each, considering that hooks have made functional components more powerful.</p>
+<pre><code>
+// Class Component Example
+import React from 'react';
+class WelcomeClass extends React.Component {
+  render() {
+    return &lt;h1&gt;Welcome, {this.props.name}! (Class)&lt;/h1&gt;;
+  }
+}
+
+// Functional Component Example
+import React from 'react';
+function WelcomeFunctional({ name }) {
+  return &lt;h1&gt;Welcome, {name}! (Functional)&lt;/h1&gt;;
+}
+
+export { WelcomeClass, WelcomeFunctional };
+</code></pre>
+<p>This section helps you decide on an approach based on code simplicity, performance, and maintainability.</p>
+      `,
+        constructor: `
+<h1>ReactJS Constructor</h1>
+<p>The constructor method in class components is used for initializing state and binding event handlers. A proper constructor setup is crucial for predictable component behavior.</p>
+<pre><code>
+import React from 'react';
+
+class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    // Initial state setup
+    this.state = { count: 0 };
+    // Bind event handlers to preserve correct context
+    this.increment = this.increment.bind(this);
+  }
+  increment() {
+    this.setState({ count: this.state.count + 1 });
+  }
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Count: {this.state.count}&lt;/p&gt;
+        &lt;button onClick={this.increment}&gt;Increment&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default Example;
+</code></pre>
+<p>This detailed explanation covers best practices for setting up your constructor to ensure robust component initialization and event handling.</p>
+      `,
+        conditionalRendering: `
+<h1>Conditional Rendering</h1>
+<p>Conditional rendering in React enables you to render different UI elements based on certain conditions. This is often implemented using ternary operators or the logical && operator.</p>
+<pre><code>
+import React, { useState } from 'react';
+
+function LoginControl() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  return (
+    &lt;div&gt;
+      {isLoggedIn ? &lt;h1&gt;Welcome Back!&lt;/h1&gt; : &lt;h1&gt;Please sign in.&lt;/h1&gt;}
+      &lt;button onClick={() => setIsLoggedIn(!isLoggedIn)}&gt;Toggle Login&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default LoginControl;
+</code></pre>
+<p>This extended explanation shows multiple techniques for conditional rendering and why they are critical for creating interactive interfaces.</p>
+      `,
+        howRoadmapHelps: `
+<h1>How This Roadmap Can Help You</h1>
+<p>This final section explains how using this detailed ReactJS roadmap can accelerate your learning. Each section not only provides in-depth explanations and examples but also encourages hands-on practice, ensuring you build a strong foundation in React development.</p>
+<pre><code>
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
+</code></pre>
+<p>This roadmap is designed to be a continuous reference as you advance your React skills, whether you are a beginner or a seasoned developer looking to refine your expertise.</p>
+      `,
+      };
+
+      function loadContent(page) {
+        const container = document.getElementById("content-container");
+        container.innerHTML = docs[page] || "<h1>Content Not Found</h1>";
+      }
+
+      document.querySelectorAll(".sidebar a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const page = this.getAttribute("data-page");
+          loadContent(page);
+        });
+      });
+
+      loadContent("roadmap");
+
+      function copyCode() {
+        const code = document.getElementById("reactCode").innerText;
+        navigator.clipboard.writeText(code).then(() => {});
+      }
+    </script> -->
+
+    <script src="scripts/main.js"></script>
+  <script src="scripts/roadmap.js"></script>
+  </body>
+</html>
