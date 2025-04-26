@@ -26,6 +26,11 @@
         background: #f0f2f5;
         color: #000;
       }
+      .primary {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
       /* Sidebar styling with independent scroll */
       .sidebar {
         width: 320px;
@@ -135,8 +140,9 @@
       .subHeading {
         font-size: 20px;
         font-weight: 500;
+        margin-bottom: 15px;
       }
-      .contentText ul {
+      ul {
         list-style: square;
         padding: 0 40px;
       }
@@ -201,7 +207,9 @@
     <div class="sidebar">
       <h2>ReactJS Roadmap</h2>
       <ul>
-        <li><a data-page="roadmap" onclick="loadContent('roadmap')">Overview</a></li>
+        <li>
+          <a data-page="roadmap" onclick="loadContent('roadmap')">Overview</a>
+        </li>
         <li>
           <a data-page="introduction" href="#"
             ><i class="fa-solid fa-lightbulb"></i> Introduction</a
@@ -1615,6 +1623,6 @@ ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
     </script> -->
 
     <script src="scripts/main.js"></script>
-  <script src="scripts/roadmap.js"></script>
+    <script src="scripts/roadmap.js"></script>
   </body>
 </html>

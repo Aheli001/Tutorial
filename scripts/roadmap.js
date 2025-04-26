@@ -63,4 +63,150 @@ root.render(<span class="tag">&lt;Greeting /&gt;</span>);
 <h1 class="contentHeading">Getting Started with ReactJS</h1>
 <p class="contentText">To get started with ReactJS we need to clear our fundamentals first before proceeding into complex topics. We will recommend you to code along with each article you read this will help you to understand the concepts. If you can create a project along with your learning that will be more helpful.</p>
 <h2 class="subHeading">Basics of ReactJS</h2>
+<ul class="primary">
+          <li>
+            <strong>ReactJS Introduction</strong>
+          </li>
+          <li>
+            <strong>ReactJS Installation</strong>
+          </li>
+          <li>
+            <strong>ReactJS Features</strong>
+          </li>
+          <li>
+            <strong>ReactJS Architecture</strong>
+          </li>
+          <li>
+            <strong>ReactJS JSX</strong>
+          </li>
+          <li>
+            <strong>ReactJS Application</strong>
+          </li>
+          <li>
+            <strong>ReactJS Fragments</strong>
+          </li>
+          <li>
+            <strong>ReactJS Conditional Rendering</strong>
+          </li>
+          <li>
+            <strong>ReactJS CLI Commands</strong>
+          </li>
+        </ul>
+        <h2 class="subHeading">ReactJS Components</h2>
+        <p class="contentText"><strong>Component</strong> is the heart of ReactJS, it is the building block of a React application. A React component represents a small chunk of user interface in a webpage.</p>
+<ul class="primary">
+          <li>
+            <strong>Components</strong>
+          </li>
+          <li>
+            <strong>ReactJS - Use Component</strong>
+          </li>
+          <li>
+            <strong>ReactJS Nested Components</strong>
+          </li>
+          <li>
+            <strong>ReactJS Component Collection</strong>
+          </li>
+          <li>
+            <strong>ReactJS Component Using Properties</strong>
+          </li>
+          <li>
+            <strong>ReactJS Component Life Cycle</strong>
+          </li>
+          <li>
+            <strong>ReactJS Event-Aware Component</strong>
+          </li>
+          <li>
+            <strong>ReactJS Stateless Component</strong>
+          </li>
+          <li>
+            <strong>ReactJS Layout Component</strong>
+          </li>
+        </ul>
+        <h2 class="subHeading">ReactJS States</h2>
+        <p class="contentText">State represents the value of the dynamic properties of a React component at a given instance. React provides a dynamic data store for each component.</p>
+<ul class="primary">
+          <li>
+            <strong>ReactJS State Management</strong>
+          </li>
+          <li>
+            <strong>ReactJS State Management API</strong>
+          </li>
+          <li>
+            <strong>ReactJS State Management through Hooks</strong>
+          </li>
+        </ul>
+         <h2 class="subHeading">ReactJS Hooks</h2>
+        <p class="contentText">Hooks are plain JavaScript functions having access to state and lifecycle events of the component in which it is used. In general, hooks start with the use keyword.</p>
+<ul class="primary">
+          <li>
+            <strong>ReactJS Introduction to Hooks</strong>
+          </li>
+          <li>
+            <strong>ReactJS useState Hook</strong>
+          </li>
+          <li>
+            <strong>ReactJS useEffect Hook</strong>
+          </li>
+          <li>
+            <strong>ReactJS useContext Hook</strong>
+          </li>
+          <li>
+            <strong>ReactJS useRef Hook</strong>
+          </li>
+          <li>
+            <strong>ReactJS useReducer Hook</strong>
+          </li>
+          <li>
+            <strong>ReactJS useCallback Hook</strong>
+          </li>
+          <li>
+            <strong>ReactJS useMemo Hook</strong>
+          </li>
+          <li>
+            <strong>ReactJS Custom Hooks</strong>
+          </li>
+        </ul>
+        <h2 class="subHeading">ReactJS Props</h2>
+        <p class="contentText">Props are used to pass data between components. In real-world projects we need the components to interact with each other which is not possible with the states as it is private to that particular component.</p>
+<ul class="primary">
+          <li>
+            <strong>ReactJS Props</strong>
+          </li>
+          <li>
+            <strong>ReactJS Props Validation</strong>
+          </li>
+        </ul>
+        <h2 class="subHeading">Other Important Topics of ReactJS</h2>
+        <p class="contentText">There are a few more things that you need to know about ReactJS as it is updating itself at a fast pace so you have to keep up with the new features as well. You can check our recently ReactJS published articles on this <strong>link</strong>. These articles are not part of our tutorial.</p>
+<ul class="primary">
+          <li>
+            <strong>ReactJS Pagination</strong>
+          </li>
+          <li>
+            <strong>ReactJS Lists</strong>
+          </li>
+          <li>
+            <strong>ReactJS Keys</strong>
+          </li>
+          <li>
+            <strong>ReactJS Router</strong>
+          </li>
+          <li>
+            <strong>ReactJS Redux</strong>
+          </li>
+          <li>
+            <strong>ReactJS Animation</strong>
+          </li>
+        </ul>
+        <h2 class="subHeading">ReactJS Jobs and Salary</h2>
+        <p class="contentText">ReactJS is popular front-end library in these days. There are a lot compnaies that hire ReactJS developers like facebook, instagram, airbnb, etc.</p>
+        <div style="background-color: #EDEDED; padding: 10px; border-radius: 5px;">
+<ul style="margin: 0;">
+  <li>
+    ReactJS Developer - Salary ranges in between 1.5 Lakhs to 16.0 Lakhs with an average annual salary of 7.3 Lakhs
+  </li>
+</ul>
+</div>
+
 `;
