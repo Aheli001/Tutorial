@@ -15,3 +15,13 @@ function copyCode() {
 window.onload = function () {
   loadContent("roadmap");
 };
+
+function goToPreviousPage() {
+  // Goes back one page in history
+  window.history.back();
+}
+
+function goToNextPage() {
+  // Goes forward one page in history
+  window.history.forward();
+}

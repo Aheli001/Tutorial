@@ -116,14 +116,20 @@
         padding: 10px 20px;
         font-size: 1em;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
       }
       .next {
-        background: #007bff;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
         color: #fff;
         border: none;
         padding: 10px 20px;
         font-size: 1em;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
       }
       .contentHeading {
         font-family: "Lato", sans-serif;
@@ -211,7 +217,7 @@
           <a data-page="roadmap" onclick="loadContent('roadmap')">Overview</a>
         </li>
         <li>
-          <a data-page="introduction" href="#"
+          <a data-page="introduction" onclick="loadContent('introduction')"
             ><i class="fa-solid fa-lightbulb"></i> Introduction</a
           >
         </li>
@@ -339,11 +345,18 @@
         </li>
       </ul>
     </div>
-
+    <div class="content">
     <!-- Right Content Area -->
-    <div class="content" id="content-container">
+    <div id="content-container">
       <!-- Extended detailed content will load here dynamically -->
+     
     </div>
+    <div style="display: flex; justify-content: flex-end; margin-top: 1rem; gap: 1rem;">
+      <button class="previous" onclick="goToPreviousPage()"><i class="fa-solid fa-chevron-left"></i>Previous</button>
+      <button class="next" onclick="goToNextPage()">Next<i class="fa-solid fa-angle-right"></i></button>
+    </div>
+  </div>
+    
 
     <!-- JavaScript for Dynamic Content -->
     <!-- <script>
@@ -1621,8 +1634,9 @@ ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
         navigator.clipboard.writeText(code).then(() => {});
       }
     </script> -->
-
+    <script src="https://kit.fontawesome.com/70d4baf1b4.js" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/roadmap.js"></script>
+    <script src="scripts/introduction.js"></script>
   </body>
 </html>
