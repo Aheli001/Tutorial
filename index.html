@@ -160,7 +160,6 @@
         border-radius: 8px;
         font-family: Consolas, monospace;
         margin-bottom: 20px;
-        
       }
 
       .copy-button {
@@ -200,6 +199,18 @@
       .attribute {
         color: #6f42c1;
       }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
       /* Responsive adjustments */
       @media (max-width: 768px) {
         body {
@@ -222,35 +233,35 @@
       <h2>ReactJS Roadmap</h2>
       <ul id="sidebarMenu"></ul>
     </div>
-    
+
     <script>
-      fetch('sidebarData.json')
-        .then(response => response.json())
-        .then(data => {
-          const menu = document.getElementById('sidebarMenu');
-    
-          data.forEach(item => {
-            const li = document.createElement('li');
-            let icon = item.icon ? `<i class="${item.icon}"></i> ` : '';
-    
+      fetch("sidebarData.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const menu = document.getElementById("sidebarMenu");
+
+          data.forEach((item) => {
+            const li = document.createElement("li");
+            let icon = item.icon ? `<i class="${item.icon}"></i> ` : "";
+
             li.innerHTML = `<a data-page="${item.page}" onclick="loadContent('${item.page}')">${icon}${item.title}</a>`;
-    
+
             if (item.subItems) {
-              const ul = document.createElement('ul');
-              item.subItems.forEach(subItem => {
-                const subLi = document.createElement('li');
+              const ul = document.createElement("ul");
+              item.subItems.forEach((subItem) => {
+                const subLi = document.createElement("li");
                 subLi.innerHTML = `<a data-page="${subItem.page}" onclick="loadContent('${subItem.page}')">${subItem.title}</a>`;
                 ul.appendChild(subLi);
               });
               li.appendChild(ul);
             }
-    
+
             menu.appendChild(li);
           });
         })
-        .catch(error => console.error('Error loading sidebar:', error));
+        .catch((error) => console.error("Error loading sidebar:", error));
     </script>
-    
+
     <div class="content">
       <!-- Right Content Area -->
       <div id="content-container">
@@ -264,10 +275,10 @@
           gap: 1rem;
         "
       >
-        <button class="previous" onclick="goToPreviousPage()">
+        <button class="previous" id="prev-button" onclick="goToPreviousPage()">
           <i class="fa-solid fa-chevron-left"></i>Previous
         </button>
-        <button class="next" onclick="goToNextPage()">
+        <button class="next" id="next-button" onclick="goToNextPage()">
           Next<i class="fa-solid fa-angle-right"></i>
         </button>
       </div>
@@ -289,5 +300,15 @@
     <script src="scripts/jsx.js"></script>
     <script src="scripts/components.js"></script>
     <script src="scripts/nestedComponents.js"></script>
+    <script src="scripts/usingComponents.js"></script>
+    <script src="scripts/componentCollection.js"></script>
+    <script src="scripts/constructor.js"></script>
+    <script src="scripts/creatingComponents.js"></script>
+    <script src="scripts/eventAware.js"></script>
+    <script src="scripts/eventManagement.js"></script>
+    <script src="scripts/lifecycle.js"></script>
+    <script src="scripts/props.js"></script>
+    <script src="scripts/propsValidation.js"></script>
+    <script src="scripts/stylingComponents.js"></script>
   </body>
 </html>
