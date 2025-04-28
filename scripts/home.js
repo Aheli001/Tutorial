@@ -28,7 +28,7 @@ docs.home = `
       <h1 class="contentHeading">ReactJS Example Code</h1>
       <p class="contentText">As this is sample code without the environment setup this code will not work to set up the ReactJS environment check ReactJS Installation article.</p>
       <div class="code-container">
-  <button class="copy-button" onclick="copyCode()">Copy</button>
+  
   <pre><code id="reactCode">
 <span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;
 <span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom/client'</span>;

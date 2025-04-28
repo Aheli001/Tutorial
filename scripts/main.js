@@ -3,17 +3,12 @@ const docs = {};
 
 function loadContent(page) {
   const container = document.getElementById("content-container");
-  container.innerHTML = docs[page] || "<h1>Content Not Found</h1>";
+  container.innerHTML = docs[page] || `<div style="display:flex; justify-content: center; align-items:center;"><h1>Content Coming Soon</h1></div>`;
 }
-
-function copyCode() {
-    const code = document.getElementById("reactCode").innerText;
-    navigator.clipboard.writeText(code).then(() => {});
-  }
 
 // Load 'roadmap' content by default when the page loads
 window.onload = function () {
-  loadContent("roadmap");
+  loadContent("home");
 };
 
 function goToPreviousPage() {

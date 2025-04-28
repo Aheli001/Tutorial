@@ -1,0 +1,86 @@
+[
+    { "title": "ReactJS - Home", "page": "home" },
+    { "title": "ReactJS - Introduction", "page": "introduction", "icon": "fa-solid fa-lightbulb" },
+    { "title": "ReactJS - Roadmap", "page": "roadmap" },
+    { "title": "ReactJS - Installation", "page": "installation" },
+    { "title": "ReactJS - Features", "page": "features" },
+    { "title": "ReactJS - Advantages & Disadvantages", "page": "advantages" },
+    { "title": "ReactJS - Architecture", "page": "architecture" },
+    { "title": "ReactJS - Creating a React Application", "page": "application" },
+    { "title": "ReactJS - JSX", "page": "jsx" },
+    { "title": "ReactJS - Components", "page": "components" },
+    { "title": "ReactJS - Nested Components", "page": "nestedComponents" },
+    { "title": "ReactJS - Using Newly Created Components", "page": "usingComponents" },
+    { "title": "ReactJS - Component Collection", "page": "componentCollection" },
+    { "title": "ReactJS - Styling", "page": "stylingComponents" },
+    { "title": "ReactJS - Properties (props)", "page": "props" },
+    { "title": "ReactJS - Creating Components Using Properties (props)", "page": "creatingComponents" },
+    { "title": "ReactJS - props Validation", "page": "propsValidation" },
+    { "title": "ReactJS - Constructor", "page": "constructor" },
+    { "title": "ReactJS - Component Life Cycle", "page": "lifecycle" },
+    { "title": "ReactJS - Event Management", "page": "eventManagement" },
+    { "title": "ReactJS - Creating an Event-Aware Component", "page": "eventAware" },
+    {
+      "title": "ReactJS State",
+      "page": "state",
+      "subItems": [
+        { "title": "State Management API", "page": "stateManagementAPI" },
+        { "title": "Stateless Component", "page": "statelessComponent" }
+      ]
+    },
+    {
+      "title": "ReactJS Props",
+      "page": "props",
+      "subItems": [
+        { "title": "Using Properties", "page": "componentProperties" },
+        { "title": "Props Validation", "page": "propsValidation" }
+      ]
+    },
+    { "title": "Component Life Cycle", "page": "lifecycle" },
+    {
+      "title": "ReactJS Lists",
+      "page": "lists",
+      "subItems": [
+        { "title": "ReactJS Keys", "page": "keys" }
+      ]
+    },
+    {
+      "title": "ReactJS Hooks",
+      "page": "hooks",
+      "subItems": [
+        { "title": "useState", "page": "useState" },
+        { "title": "useEffect", "page": "useEffect" },
+        { "title": "useContext", "page": "useContext" },
+        { "title": "useRef", "page": "useRef" },
+        { "title": "useReducer", "page": "useReducer" },
+        { "title": "useCallback", "page": "useCallback" },
+        { "title": "useMemo", "page": "useMemo" },
+        { "title": "Custom Hooks", "page": "customHooks" }
+      ]
+    },
+    { "title": "ReactJS Forms", "page": "forms" },
+    { "title": "ReactJS Reconciliation", "page": "reconciliation" },
+    { "title": "ReactJS Context", "page": "context" },
+    {
+      "title": "ReactJS Events",
+      "page": "events",
+      "subItems": [
+        { "title": "Events in Expense Manager", "page": "eventsExpenseManager" },
+        { "title": "Create an Event", "page": "createEvent" },
+        { "title": "Controlled Components", "page": "controlledComponents" },
+        { "title": "Uncontrolled Components", "page": "uncontrolledComponents" }
+      ]
+    },
+    { "title": "ReactJS Lazy Loading", "page": "lazyLoading" },
+    { "title": "ReactJS Portals", "page": "portals" },
+    { "title": "Keep Practicing", "page": "keepPracticing" },
+    { "title": "ReactJS Routing", "page": "routing" },
+    { "title": "ReactJS Best Practices", "page": "bestPractices" },
+    { "title": "ReactJS Quick Guide", "page": "quickGuide" },
+    { "title": "State Management Hooks", "page": "stateManagementHooks" },
+    { "title": "Class vs Functional Components", "page": "classVsFunctional" },
+    { "title": "ReactJS Constructor", "page": "constructor" },
+    { "title": "Conditional Rendering", "page": "conditionalRendering" },
+    { "title": "How This Roadmap Helps You", "page": "howRoadmapHelps" }
+  ]
+  
