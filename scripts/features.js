@@ -1,4 +1,5 @@
 docs.features = `
+<h1 class="heading">ReactJS − Features</h1>
         <div class="contentText">
 <p class="contentText">ReactJS slowly becoming one of the best JavaScript framework among web developers. It is playing an essential role in the front-end ecosystem. Following are the important features of ReactJS</p>
 <ul>

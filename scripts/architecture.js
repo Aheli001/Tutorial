@@ -1,4 +1,5 @@
 docs.architecture = `
+<h1 class="heading">ReactJS − Architecture</h1>
         <div class="contentText">
 <p class="contentText">React library is built on a solid foundation. It is simple, flexible and extensible. As we learned earlier, React is a library to create user interface in a web application. React's primary purpose is to enable the developer to create user interface using pure JavaScript. Normally, every user interface library introduces a new template language (which we need to learn) to design the user interface and provides an option to write logic, either inside the template or separately.</p>
 <p class="contentText">Instead of introducing new template language, React introduces three simple concepts as given below −</p>

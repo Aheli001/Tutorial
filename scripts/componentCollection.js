@@ -1,4 +1,5 @@
 docs.componentCollection = `
+<h1 class="heading">ReactJS − Component Collection</h1>
         <p class="contentText">In modern application, developer encounters a lot of situations, where list of item (e.g. todos, orders, invoices, etc.,) has to be rendered in tabular format or gallery format. React provides clear, intuitive and easy technique to create list based user interface. React uses two existing features to accomplish this feature.</p>
         <div style="background-color: #EDEDED; padding: 10px; border-radius: 5px;">
 <ul style="margin: 0;">

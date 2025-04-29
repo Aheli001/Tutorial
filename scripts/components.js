@@ -1,4 +1,5 @@
 docs.components = `
+<h1 class="heading">ReactJS − Component</h1>
         <div class="contentText">
 <p class="contentText">React component is the building block of a React application. Let us learn how to create a new React component and the features of React components in this chapter.</p>
 <p class="contentText">A React component represents a small chunk of user interface in a webpage. The primary job of a React component is to render its user interface and update it whenever its internal state is changed. In addition to rendering the UI, it manages the events belongs to its user interface. To summarize, React component provides below functionalities.</p>

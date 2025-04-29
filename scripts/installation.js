@@ -1,4 +1,5 @@
 docs.installation = `
+<h1 class="heading">ReactJS − Installation</h1>
 <div style="display: flex; flex-direction: column; gap: 0.5rem;">
 <p class="contentText">This chapter explains the installation of React library and its related tools in your machine. Before moving to the installation, let us verify the prerequisite first.</p>
 <p class="contentText">React provides CLI tools for the developer to fast forward the creation, development and deployment of the React based web application. React CLI tools depends on the Node.js and must be installed in your system. Hopefully, you have installed Node.js on your machine. We can check it using the below command −</p>

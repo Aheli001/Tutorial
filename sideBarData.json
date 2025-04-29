@@ -14,73 +14,36 @@
     { "title": "ReactJS - Component Collection", "page": "componentCollection" },
     { "title": "ReactJS - Styling", "page": "stylingComponents" },
     { "title": "ReactJS - Properties (props)", "page": "props" },
-    { "title": "ReactJS - Creating Components Using Properties (props)", "page": "creatingComponents" },
-    { "title": "ReactJS - props Validation", "page": "propsValidation" },
-    { "title": "ReactJS - Constructor", "page": "constructor" },
-    { "title": "ReactJS - Component Life Cycle", "page": "lifecycle" },
-    { "title": "ReactJS - Event Management", "page": "eventManagement" },
-    { "title": "ReactJS - Creating an Event-Aware Component", "page": "eventAware" },
     {
-      "title": "ReactJS State",
-      "page": "state",
+      "title": "Hooks",
+      "icon": "fa-solid fa-link",
       "subItems": [
-        { "title": "State Management API", "page": "stateManagementAPI" },
-        { "title": "Stateless Component", "page": "statelessComponent" }
+        { "title": "ReactJS - Introduction to Hooks", "page": "introToHooks" },
+        { "title": "ReactJS - Using useState", "page": "useState" },
+        { "title": "ReactJS - Using useEffect", "page": "useEffect" },
+        { "title": "ReactJS - Using useContext", "page": "useContext" },
+        { "title": "ReactJS - useRef", "page": "useRef" },
+        { "title": "ReactJS - Using useReducer", "page": "useReducer" },
+        { "title": "ReactJS - Using useCallback", "page": "useCallback" },
+        { "title": "ReactJS: Using useMemo", "page": "useMemo" },
+        { "title": "ReactJS - Custom Hooks", "page": "customHooks" }
       ]
     },
     {
-      "title": "ReactJS Props",
-      "page": "props",
+      "title": "ReactJS Advanced",
+      "icon": "fa-solid fa-link",
       "subItems": [
-        { "title": "Using Properties", "page": "componentProperties" },
-        { "title": "Props Validation", "page": "propsValidation" }
+        { "title": "ReactJS - Accessibility", "page": "introToHooks" },
+        { "title": "ReactJS - Code-Splitting", "page": "useState" },
+        { "title": "ReactJS - Context", "page": "useEffect" },
+        { "title": "ReactJS - Error Boundaries", "page": "useContext" },
+        { "title": "ReactJS - Forwarding Refs", "page": "useRef" },
+        { "title": "ReactJS - Fragments", "page": "useReducer" },
+        { "title": "ReactJS - Higher-Order Components", "page": "useCallback" },
+        { "title": "ReactJS - Integrating with Other Libraries", "page": "useMemo" },
+        { "title": "ReactJS - Optimizing Performance", "page": "customHooks" },
+        { "title": "ReactJS - Portals", "page": "customHooks" }
       ]
-    },
-    { "title": "Component Life Cycle", "page": "lifecycle" },
-    {
-      "title": "ReactJS Lists",
-      "page": "lists",
-      "subItems": [
-        { "title": "ReactJS Keys", "page": "keys" }
-      ]
-    },
-    {
-      "title": "ReactJS Hooks",
-      "page": "hooks",
-      "subItems": [
-        { "title": "useState", "page": "useState" },
-        { "title": "useEffect", "page": "useEffect" },
-        { "title": "useContext", "page": "useContext" },
-        { "title": "useRef", "page": "useRef" },
-        { "title": "useReducer", "page": "useReducer" },
-        { "title": "useCallback", "page": "useCallback" },
-        { "title": "useMemo", "page": "useMemo" },
-        { "title": "Custom Hooks", "page": "customHooks" }
-      ]
-    },
-    { "title": "ReactJS Forms", "page": "forms" },
-    { "title": "ReactJS Reconciliation", "page": "reconciliation" },
-    { "title": "ReactJS Context", "page": "context" },
-    {
-      "title": "ReactJS Events",
-      "page": "events",
-      "subItems": [
-        { "title": "Events in Expense Manager", "page": "eventsExpenseManager" },
-        { "title": "Create an Event", "page": "createEvent" },
-        { "title": "Controlled Components", "page": "controlledComponents" },
-        { "title": "Uncontrolled Components", "page": "uncontrolledComponents" }
-      ]
-    },
-    { "title": "ReactJS Lazy Loading", "page": "lazyLoading" },
-    { "title": "ReactJS Portals", "page": "portals" },
-    { "title": "Keep Practicing", "page": "keepPracticing" },
-    { "title": "ReactJS Routing", "page": "routing" },
-    { "title": "ReactJS Best Practices", "page": "bestPractices" },
-    { "title": "ReactJS Quick Guide", "page": "quickGuide" },
-    { "title": "State Management Hooks", "page": "stateManagementHooks" },
-    { "title": "Class vs Functional Components", "page": "classVsFunctional" },
-    { "title": "ReactJS Constructor", "page": "constructor" },
-    { "title": "Conditional Rendering", "page": "conditionalRendering" },
-    { "title": "How This Roadmap Helps You", "page": "howRoadmapHelps" }
+    }
   ]
   

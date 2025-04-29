@@ -1,4 +1,5 @@
 docs.nestedComponents = `
+<h1 class="heading">ReactJS − Nested Components</h1>
 <div class="contentText">
 <p class="contentText">A nested component in React is a component that is related to an another component. You can also consider it as a child component inside a parent component; but they are not linked together using the inheritance concept but with the composition concept. Therefore, all the components are nested together in order to create a bigger component rather than a smaller component inheriting from the parent component.</p>
 <p class="contentText">The React component is a building block of a React application. A React component is made up of the multiple individual components. React allows multiple components to be combined to create larger components. Also, React components can be nested to any arbitrary level.</p>

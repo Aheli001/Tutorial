@@ -1,4 +1,5 @@
 docs.home = `
+<h1 class="heading">ReactJS − Tutorial</h1>
         <p class="contentText">This ReactJS tutorial includes all of the most recent updates up to version 18.2.0 and covers every topic, from fundamental to advanced. React is the most recommended JavScript library to learn now because of its core foundation of features and large community.</p>
         <h1 class="contentHeading">What is ReactJS?</h1>
         <p class="contentText">ReactJS is an open-source JavaScript library for building dynamic and interactive user interfaces(UIs). React is developed and released by Facebook. Facebook is continuously working on the React library and enhancing it by fixing bugs and introducing new features.</p>

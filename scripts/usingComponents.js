@@ -1,4 +1,5 @@
 docs.usingComponents = `
+<h1 class="heading">ReactJS − Use Component</h1>
         <p class="contentText">A React component represents a small chunk of user interface in a webpage. The primary job of a React component is to render its user interface and update it whenever its internal state is changed. In addition to rendering the UI, it manages the events belongs to its user interface. To summarize, React component provides below functionalities.</p>
         <h1 class="contentHeading">Using Components in ReactJS</h1>
         <div class="contentText">

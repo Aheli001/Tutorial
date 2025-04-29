@@ -1,4 +1,6 @@
 docs.application = `
+<h1 class="heading">ReactJS − Creating a React Application
+</h1>
         <div class="contentText">
 <p class="contentText">As we learned earlier, React library can be used in both simple and complex application. Simple application normally includes the React library in its script section. In complex application, developers have to split the code into multiple files and organize the code into a standard structure. Here, React toolchain provides pre-defined structure to bootstrap the application. Also, developers are free to use their own project structure to organize the code.</p>
 <p class="contentText">Let us see how to create simple as well as complex React application −</p>

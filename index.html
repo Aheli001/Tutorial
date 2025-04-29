@@ -76,9 +76,8 @@
         background: rgba(255, 255, 255, 0.2);
       }
       .sidebar ul ul {
-        margin-left: 15px;
-        border-left: 1px dashed rgba(255, 255, 255, 0.3);
-        padding-left: 10px;
+        margin-left: 10px;
+        padding: 0;
       }
       /* Content area styling with independent scroll */
       .content {
@@ -131,6 +130,10 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+      }
+      .heading {
+        text-align: center;
+        border-bottom: 1px solid #b8b5b5;
       }
       .contentHeading {
         font-family: "Lato", sans-serif;
@@ -211,6 +214,69 @@
         text-align: left;
         padding: 8px;
       }
+
+      #sidebarMenu a {
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+        padding: 8px;
+        transition: all 0.3s ease;
+      }
+
+      #sidebarMenu a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+
+      #sidebarMenu a.active {
+        background: linear-gradient(135deg, #2575fc, #6a11cb);
+        color: #fff !important;
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      #sidebarMenu a.active:hover {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+      }
+
+      #sidebarMenu ul ul a.active {
+        background: linear-gradient(135deg, #2575fc, #6a11cb);
+        border-left: 3px solid #fff;
+      }
+
+      /* New styles for section headers (items without pages) */
+      #sidebarMenu a.section-header {
+        background-color: rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+        color: #fff;
+        border-left: 3px solid rgba(255, 255, 255, 0.7);
+        margin-top: 10px;
+        margin-bottom: 5px;
+        cursor: default;
+      }
+
+      #sidebarMenu a.section-header:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+      }
+
+      #sidebarMenu a.section-header.active {
+        background: rgba(0, 0, 0, 0.3);
+        border-left: 3px solid #fff;
+      }
+
+      #sidebarMenu a.section-header i.toggle-icon {
+        float: right;
+        transition: transform 0.3s ease;
+      }
+
+      #sidebarMenu a.section-header.collapsed i.toggle-icon {
+        transform: rotate(-90deg);
+      }
+
+      #sidebarMenu ul.collapsed {
+        display: none;
+      }
+
       /* Responsive adjustments */
       @media (max-width: 768px) {
         body {
@@ -235,24 +301,91 @@
     </div>
 
     <script>
+      function setActiveLink(page) {
+        const links = document.querySelectorAll("#sidebarMenu a");
+        links.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("data-page") === page) {
+            link.classList.add("active");
+            // Also activate parent if it's a sub-item
+            const parentLi = link.closest('ul').closest('li');
+            if (parentLi) {
+              const parentLink = parentLi.querySelector('a:first-child');
+              if (parentLink) {
+                parentLink.classList.add("active");
+              }
+            }
+          }
+        });
+      }
+
+      function loadContent(page) {
+        // Update the active state
+        setActiveLink(page);
+        
+        // Your existing content loading logic here
+        console.log("Loading page:", page);
+      }
+
+      function toggleSubMenu(event, li) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        const subMenu = li.querySelector('ul');
+        const headerLink = li.querySelector('a.section-header');
+        
+        if (subMenu) {
+          subMenu.classList.toggle('collapsed');
+          headerLink.classList.toggle('collapsed');
+        }
+      }
+
       fetch("sidebarData.json")
         .then((response) => response.json())
         .then((data) => {
           const menu = document.getElementById("sidebarMenu");
+          menu.innerHTML = ''; // Clear existing content
 
           data.forEach((item) => {
             const li = document.createElement("li");
             let icon = item.icon ? `<i class="${item.icon}"></i> ` : "";
+            
+            // Check if this is a section header (no page property but has subItems)
+            const isSection = !item.page && item.subItems;
 
-            li.innerHTML = `<a data-page="${item.page}" onclick="loadContent('${item.page}')">${icon}${item.title}</a>`;
+            // Create main link
+            const mainLink = document.createElement("a");
+            
+            if (isSection) {
+              // This is a section header
+              mainLink.classList.add("section-header");
+              mainLink.innerHTML = `${icon}${item.title} <i class="fa-solid fa-chevron-down toggle-icon"></i>`;
+              
+              // Add click handler to toggle submenu
+              mainLink.onclick = (e) => toggleSubMenu(e, li);
+            } else {
+              // This is a regular item with a page
+              mainLink.setAttribute("data-page", item.page);
+              mainLink.innerHTML = `${icon}${item.title}`;
+              mainLink.onclick = () => loadContent(item.page);
+            }
+            
+            li.appendChild(mainLink);
 
+            // Create submenu if exists
             if (item.subItems) {
               const ul = document.createElement("ul");
+              
               item.subItems.forEach((subItem) => {
                 const subLi = document.createElement("li");
-                subLi.innerHTML = `<a data-page="${subItem.page}" onclick="loadContent('${subItem.page}')">${subItem.title}</a>`;
+                const subLink = document.createElement("a");
+                subLink.setAttribute("data-page", subItem.page);
+                subLink.innerHTML = subItem.title;
+                subLink.onclick = () => loadContent(subItem.page);
+                subLi.appendChild(subLink);
                 ul.appendChild(subLi);
               });
+              
               li.appendChild(ul);
             }
 
@@ -289,26 +422,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="scripts/main.js"></script>
-    <script src="scripts/home.js"></script>
-    <script src="scripts/introduction.js"></script>
-    <script src="scripts/roadmap.js"></script>
-    <script src="scripts/installation.js"></script>
-    <script src="scripts/features.js"></script>
-    <script src="scripts/advantages.js"></script>
-    <script src="scripts/architecture.js"></script>
-    <script src="scripts/application.js"></script>
-    <script src="scripts/jsx.js"></script>
-    <script src="scripts/components.js"></script>
-    <script src="scripts/nestedComponents.js"></script>
-    <script src="scripts/usingComponents.js"></script>
-    <script src="scripts/componentCollection.js"></script>
-    <script src="scripts/constructor.js"></script>
-    <script src="scripts/creatingComponents.js"></script>
-    <script src="scripts/eventAware.js"></script>
-    <script src="scripts/eventManagement.js"></script>
-    <script src="scripts/lifecycle.js"></script>
-    <script src="scripts/props.js"></script>
-    <script src="scripts/propsValidation.js"></script>
-    <script src="scripts/stylingComponents.js"></script>
   </body>
 </html>

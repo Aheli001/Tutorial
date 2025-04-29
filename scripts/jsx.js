@@ -1,4 +1,5 @@
 docs.jsx = `
+<h1 class="heading">ReactJS − JSX</h1>
 <p class="contentText">As we learned earlier, React JSX is an extension to JavaScript. It allows writing a JavaScript code that looks like an HTML code. For instance, consider the following code:</p>
 <div class="code-container">
   

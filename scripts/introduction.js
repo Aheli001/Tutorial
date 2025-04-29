@@ -1,4 +1,5 @@
 docs.introduction = `
+<h1 class="heading">ReactJS − Introduction</h1>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
         <p class="contentText">ReactJS is a free and open-source front-end JavaScript library which is used to develop various interactive user-interfaces. It is a simple, feature rich and component based UI library. When we say component based, we mean that React develops applications by creating various reusable and independent codes. This UI library is, thus, widely used in web development.</p>
 <p>ReactJS can be used to develop small applications as well as big, complex applications. ReactJS provides minimal and solid feature set to kick-start a web application. React community compliments React library by providing large set of ready-made components to develop web application in a record time. React community also provides advanced concept like state management, routing, etc., on top of the React library.</p>

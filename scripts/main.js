@@ -11,8 +11,13 @@ function loadContent(page) {
   currentPage = page;
   const container = document.getElementById("content-container");
   container.innerHTML = docs[page] || `<div style="display:flex; justify-content: center; align-items:center;"><h1>Content Coming Soon</h1></div>`;
-  
-  // Update navigation button states
+
+  // Scroll the scrollable container to top
+  const scrollContainer = document.querySelector('.content');
+  if (scrollContainer) {
+    scrollContainer.scrollTop = 0;
+  }
+
   updateNavigationButtons();
 }
 
@@ -79,3 +84,19 @@ function updateNavigationButtons() {
     nextButton.disabled = currentIndex === sidebarData.length - 1;
   }
 }
+
+const scripts = [
+  'home.js', 'introduction.js', 'roadmap.js', 'installation.js', 'features.js',
+  'advantages.js', 'architecture.js', 'application.js', 'jsx.js', 'components.js',
+  'nestedComponents.js', 'usingComponents.js', 'componentCollection.js', 'props.js',
+  'stylingComponents.js',
+  'hooks/introToHooks.js', 'hooks/useState.js', 'hooks/useEffect.js',
+  'hooks/useContext.js', 'hooks/useRef.js', 'hooks/useReducer.js',
+  'hooks/useCallback.js', 'hooks/useMemo.js', 'hooks/customHooks.js'
+];
+
+scripts.forEach(script => {
+  const tag = document.createElement('script');
+  tag.src = `scripts/${script}`;
+  document.body.appendChild(tag);
+});
