@@ -1,102 +1,120 @@
 docs.useState = `
-<h1 class="heading">ReactJS - Using useState</h1>
-<p class="contentText">useState is a basic React hook, which allows a function component to maintain its own state and re-render itself based on the state changes. The signature of the useState is as follows −</p>
-        <div class="code-container">
-  <pre><code>
-<span class="keyword">const</span> [ <span class="variable">state</span>, <span class="function-name">setState</span> ] = <span class="function-name">useState</span>( <span class="value">initialValue</span> )
-  </code></pre>
+<h1 class="heading">ReactJS - useState</h1>
+<div style="display: flex; flex-direction: column; gap: 0.5rem;">
+  <p class="contentText">useState is a fundamental React hook that enables state management in function components. It allows components to maintain and update their state, triggering re-renders when the state changes.</p>
 </div>
-<p class="contentText">where,</p>
-        <div style="background-color: #EDEDED; padding: 10px; border-radius: 5px; margin-bottom: 20px;">
-<ul style="margin: 0;">
-  <li><strong>initialValue</strong> − The initial value of the state, which can be of any type (number, string, array, object, etc.).</li>
-  <li><strong>state</strong> − A variable that holds the current value of the state.</li>
-  <li><strong>setState</strong> − A function that allows updating the state, returned by the <code>useState</code> hook.</li>
-</ul>
-</div>
-<p class="contentText">The signature of the setState function is as follows −</p>
-<div class="code-container">
-  <pre><code>
-<span class="function-name">setState</span>( <span class="value">valueToBeUpdated</span> )
-  </code></pre>
-</div>
-<p class="contentText">Where, valueToBeUpdated is the value to be updated for the state. The sample usage to set and update the user's name is as follows −</p>
-<div class="code-container">
-  <pre><code>
-// initialize the state
-<span class="keyword">const</span> [<span class="variable">name</span>, <span class="function-name">setName</span>] = <span class="keyword">useState</span>(<span class="string">'John'</span>);
 
-// update the state
-<span class="function-name">setName</span>(<span class="string">'Peter'</span>);
-  </code></pre>
-</div>
-<h1 class="contentHeading">Features</h1>
-<div class="contentText">
-<p class="contentText">Notable features of useState are as follows −</p>
-<p class="contentText"><strong>Function Parameter</strong> − It Accepts a function (returns initial state) instead of initial value and execute the function only once during initial rendering of the component. This will help to improve the performance, if the computation of initial value is expensive.</p>
-</div>
+<h1 class="contentHeading">Signature</h1>
 <div class="code-container">
   <pre><code>
-<span class="keyword">const</span> [<span class="variable">val</span>, <span class="function-name">setVal</span>] = <span class="keyword">useState</span>(() => {
-   <span class="keyword">var</span> <span class="variable">initialValue</span> = <span class="keyword">null</span>;
-   <span class="comment">// expensive calculation of initial value</span>
-   <span class="keyword">return</span> <span class="variable">initialValue</span>;
-});
+<span class="keyword">const</span> [<span class="variable">state</span>, <span class="function-name">setState</span>] = <span class="function-name">useState</span>(<span class="value">initialValue</span>)
   </code></pre>
 </div>
-<p class="contentText"><strong>Verifies the previous values</strong> − It checks the current and previous value of the state and only if they are different, React renders its children and fires the effects. This will improve performance of the rendering.</p>
-<div class="code-container">
-  <pre><code>
-<span class="comment">// ...</span>
-<span class="function-name">setName</span>(<span class="string">'John'</span>) <span class="comment">// update the state and rerender the component</span>
-<span class="comment">// ...</span>
-<span class="comment">// ...</span>
-<span class="function-name">setName</span>(<span class="string">'John'</span>) <span class="comment">// does not fire the rendering of the children because the value of the state have not changed.</span>
-<span class="comment">// ...</span>
-  </code></pre>
-</div>
-<p class="contentText"><strong>Batches multiple state updates</strong> − Multiple state updates are batched and processed by React internally. If multiple state update has to be done immediately, then the special function flushSync provided by React can be used, which will immediately flush all the state changes.</p>
-<div class="code-container">
-  <pre><code>
-<span class="function-name">flushSync</span>(<span class="tag">() =></span> <span class="function-name">setName</span>(<span class="string">'Peter'</span>))
-  </code></pre>
-</div>
-<h1 class="contentHeading">Applying state hook</h1>
-<div class="contentText">
-<p class="contentText">Let us create a login form component and maintain the values of the form using useState hook.</p>
-<p class="contentText">First of all, create and start a React application using below commands,</p>
-</div>
-<div class="code-container">
-  <pre><code>
-create-react-app myapp
-cd myapp
-npm start
-  </code></pre>
-</div>
-<p class="contentText">Next, create a react component, LoginForm under component folder (src/components/LoginForm.js)</p>
-<div class="code-container">
-  <pre><code>
-<span class="keyword">import</span> { <span class="keyword">useState</span> } <span class="keyword">from</span> <span class="string">'react'</span>;
 
-<span class="keyword">export</span> <span class="keyword">default</span> <span class="function-name">function</span> <span class="function-name">LoginForm</span>() { 
-   <span class="comment">// render code</span>
-}
-  </code></pre>
+<div style="background-color: #EDEDED; padding: 10px; border-radius: 5px; margin-bottom: 20px;">
+  <ul style="margin: 0;">
+    <li><strong>initialValue</strong> − The starting value for the state</li>
+    <li><strong>state</strong> − Current state value</li>
+    <li><strong>setState</strong> − Function to update the state</li>
+  </ul>
 </div>
-<p class="contentText">Next, create two state variable, username and password using useState hook as shown below −</p>
+
+<h1 class="contentHeading">Basic Usage</h1>
 <div class="code-container">
   <pre><code>
-<span class="keyword">import</span> { <span class="keyword">useState</span> } <span class="keyword">from</span> <span class="string">'react'</span>;
+<span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;
 
-<span class="keyword">export</span> <span class="keyword">default</span> <span class="function-name">function</span> <span class="function-name">LoginForm</span>() { 
-   <span class="keyword">const</span> [<span class="variable">username</span>, <span class="variable">setUsername</span>] <span class="keyword">=</span> <span class="function-name">useState</span>('') 
-   <span class="keyword">const</span> [<span class="variable">password</span>, <span class="variable">setPassword</span>] <span class="keyword">=</span> <span class="function-name">useState</span>('') 
+<span class="keyword">function</span> <span class="function-name">Counter</span>() &#123;
+   <span class="keyword">const</span> [count, setCount] = useState(0);
+
+   <span class="keyword">return</span> (
+      <span class="tag">&lt;div&gt;</span>
+         <span class="tag">&lt;p&gt;</span>Count: &#123;count&#125;<span class="tag">&lt;/p&gt;</span>
+         <span class="tag">&lt;button</span> <span class="attr">onClick=</span>&#123;() => setCount(count + 1)&#125;<span class="tag">&gt;</span>
+            Increment
+         <span class="tag">&lt;/button&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+   );
+&#125;
+  </code></pre>
+</div>
+
+<h1 class="contentHeading">Login Form Example</h1>
+<div class="code-container">
+  <pre><code>
+<span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;
+
+<span class="keyword">export default function</span> <span class="function-name">LoginForm</span>() &#123;
+   <span class="keyword">const</span> [username, setUsername] = useState(<span class="string">''</span>)
+   <span class="keyword">const</span> [password, setPassword] = useState(<span class="string">''</span>)
    
-   <span class="comment">// render code</span>
-}
+   <span class="keyword">let</span> isEmpty = (val) => &#123;
+      <span class="keyword">if</span>(val == <span class="keyword">null</span> || val == <span class="string">''</span>) &#123;
+         <span class="keyword">return</span> <span class="keyword">true</span>;
+      &#125; <span class="keyword">else</span> &#123;
+         <span class="keyword">return</span> <span class="keyword">false</span>;
+      &#125;
+   &#125;
+   
+   <span class="keyword">let</span> validate = (e) => &#123;
+      e.preventDefault()
+      <span class="keyword">if</span>(!isEmpty(username) && !isEmpty(password)) &#123;
+         alert(JSON.stringify(&#123;
+            username: username,
+            password: password
+         &#125;))
+      &#125; <span class="keyword">else</span> &#123;
+         alert(<span class="string">"Please enter username / password"</span>)
+      &#125;
+   &#125;
+
+   <span class="keyword">return</span> (
+      <span class="tag">&lt;form</span> <span class="attr">onSubmit=</span>&#123;validate&#125;<span class="tag">&gt;</span>
+         <span class="tag">&lt;div&gt;</span>
+            <span class="tag">&lt;label&gt;</span>Username:<span class="tag">&lt;/label&gt;</span>
+            <span class="tag">&lt;input</span>
+               <span class="attr">type=</span><span class="string">"text"</span>
+               <span class="attr">value=</span>&#123;username&#125;
+               <span class="attr">onChange=</span>&#123;(e) => setUsername(e.target.value)&#125;
+            <span class="tag">/&gt;</span>
+         <span class="tag">&lt;/div&gt;</span>
+         <span class="tag">&lt;div&gt;</span>
+            <span class="tag">&lt;label&gt;</span>Password:<span class="tag">&lt;/label&gt;</span>
+            <span class="tag">&lt;input</span>
+               <span class="attr">type=</span><span class="string">"password"</span>
+               <span class="attr">value=</span>&#123;password&#125;
+               <span class="attr">onChange=</span>&#123;(e) => setPassword(e.target.value)&#125;
+            <span class="tag">/&gt;</span>
+         <span class="tag">&lt;/div&gt;</span>
+         <span class="tag">&lt;button</span> <span class="attr">type=</span><span class="string">"submit"</span><span class="tag">&gt;</span>Login<span class="tag">&lt;/button&gt;</span>
+      <span class="tag">&lt;/form&gt;</span>
+   );
+&#125;
   </code></pre>
 </div>
-<p class="contentText">Next, create a function to validate the login data as shown below −</p>
 
+<h1 class="contentHeading">Key Features</h1>
+<div style="background-color: #EDEDED; padding: 10px; border-radius: 5px; margin-bottom: 20px;">
+  <ul style="margin: 0;">
+    <li><strong>Lazy Initialization</strong> − Accepts a function for expensive initial state calculations</li>
+    <li><strong>State Updates</strong> − Triggers re-renders only when state actually changes</li>
+    <li><strong>Batched Updates</strong> − Multiple state updates are batched for performance</li>
+    <li><strong>Functional Updates</strong> − Supports functional updates for state based on previous state</li>
+    <li><strong>Type Safety</strong> − Works with TypeScript for type-safe state management</li>
+  </ul>
+</div>
 
+<h1 class="contentHeading">Best Practices</h1>
+<div style="background-color: #EDEDED; padding: 10px; border-radius: 5px; margin-bottom: 20px;">
+  <ul style="margin: 0;">
+    <li><strong>Minimize State</strong> − Only use state for values that change over time</li>
+    <li><strong>State Splitting</strong> − Split complex state into multiple useState calls</li>
+    <li><strong>Functional Updates</strong> − Use functional updates when new state depends on previous state</li>
+    <li><strong>Initialization</strong> − Use lazy initialization for expensive calculations</li>
+    <li><strong>Type Safety</strong> − Define proper types for state values</li>
+  </ul>
+</div>
+
+<h1 class="subHeading">Summary</h1>
+<p class="contentText">useState is a powerful hook that enables state management in function components. It provides a simple and efficient way to handle component state, with features like lazy initialization, value comparison, and batched updates. The login form example demonstrates practical usage of useState for form handling and validation. Following best practices ensures optimal performance and maintainability.</p>
 `;
