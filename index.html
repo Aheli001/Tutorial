@@ -35,8 +35,8 @@
       .sidebar {
         width: 320px;
         height: 100vh; /* full viewport height */
-        background: linear-gradient(135deg, #6a11cb, #2575fc);
-        color: #fff;
+        background: #F4F4F4;
+        color: #000;
         padding: 20px;
         overflow-y: scroll;
       }
@@ -68,7 +68,7 @@
         display: block;
         padding: 8px 12px;
         text-decoration: none;
-        color: #fff;
+        color: #000;
         border-radius: 4px;
         transition: background 0.3s ease;
         font-size: 0.95em;
@@ -90,6 +90,8 @@
         overflow-y: scroll;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         text-align: justify;
+        max-width: 800px;
+        margin: 0 auto;
       }
       .content h1 {
         margin-bottom: 10px;
@@ -225,8 +227,8 @@
       }
 
       #sidebarMenu a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        color: #fff;
+        background-color: #fff ;
+        color: #000 ;
       }
 
       #sidebarMenu a.active {
@@ -247,17 +249,13 @@
 
       /* New styles for section headers (items without pages) */
       #sidebarMenu a.section-header {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: #202124;
         font-weight: bold;
         color: #fff;
         border-left: 3px solid rgba(255, 255, 255, 0.7);
         margin-top: 10px;
         margin-bottom: 5px;
         cursor: default;
-      }
-
-      #sidebarMenu a.section-header:hover {
-        background-color: rgba(0, 0, 0, 0.25);
       }
 
 
