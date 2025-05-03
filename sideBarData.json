@@ -33,16 +33,13 @@
       "title": "ReactJS Advanced",
       "icon": "fa-solid fa-link",
       "subItems": [
-        { "title": "ReactJS - Accessibility", "page": "introToHooks" },
-        { "title": "ReactJS - Code-Splitting", "page": "useState" },
-        { "title": "ReactJS - Context", "page": "useEffect" },
-        { "title": "ReactJS - Error Boundaries", "page": "useContext" },
-        { "title": "ReactJS - Forwarding Refs", "page": "useRef" },
-        { "title": "ReactJS - Fragments", "page": "useReducer" },
-        { "title": "ReactJS - Higher-Order Components", "page": "useCallback" },
-        { "title": "ReactJS - Integrating with Other Libraries", "page": "useMemo" },
-        { "title": "ReactJS - Optimizing Performance", "page": "customHooks" },
-        { "title": "ReactJS - Portals", "page": "customHooks" }
+        { "title": "ReactJS - Accessibility", "page": "accessibility" },
+        { "title": "ReactJS - Code-Splitting", "page": "codeSplitting" },
+        { "title": "ReactJS - Context", "page": "context" },
+        { "title": "ReactJS - Error Boundaries", "page": "errorBoundaries" },
+        { "title": "ReactJS - Forwarding Refs", "page": "forwardingRefs" },
+        { "title": "ReactJS - Fragments", "page": "fragments" },
+        { "title": "ReactJS - Higher-Order Components", "page": "higherOrderComponents" }
       ]
     }
   ]

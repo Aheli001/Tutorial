@@ -189,7 +189,10 @@ const scripts = [
   'stylingComponents.js',
   'hooks/introToHooks.js', 'hooks/useState.js', 'hooks/useEffect.js',
   'hooks/useContext.js', 'hooks/useRef.js', 'hooks/useReducer.js',
-  'hooks/useCallback.js', 'hooks/useMemo.js', 'hooks/customHooks.js'
+  'hooks/useCallback.js', 'hooks/useMemo.js', 'hooks/customHooks.js',
+  'advanced/accessibility.js', 'advanced/codeSplitting.js', 'advanced/context.js',
+  'advanced/errorBoundaries.js', 'advanced/forwardingRefs.js', 'advanced/fragments.js',
+  'advanced/higherOrderComponents.js'
 ];
 
 scripts.forEach(script => {
