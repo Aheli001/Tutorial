@@ -4,7 +4,7 @@ if (typeof docs === 'undefined') {
 }
 
 // Variable to store the sidebar data once loaded
-let sidebarData = [];
+let sideBarData = [];
 
 // Track current page
 let currentPage = "home";
@@ -116,7 +116,7 @@ function updateSidebarActiveState(page) {
 
 function getFlattenedItems() {
     let flatItems = [];
-    sidebarData.forEach(item => {
+    sideBarData.forEach(item => {
         if (item.page) {
             flatItems.push(item);
         }
@@ -161,10 +161,10 @@ function updateNavigationButtons() {
 // Initialize the application when the page loads
 window.onload = function() {
     // First load the sidebar data, then initialize the page
-    fetch("sidebarData.json")
+    fetch("sideBarData.json")
         .then((response) => response.json())
         .then((data) => {
-            sidebarData = data;
+            sideBarData = data;
             const menu = document.getElementById("sidebarMenu");
             menu.innerHTML = ''; // Clear existing content
 
