@@ -15,7 +15,7 @@
     { "title": "ReactJS - Styling", "page": "stylingComponents" },
     { "title": "ReactJS - Properties (props)", "page": "props" },
     {
-      "title": "Hooks",
+      "title": "ReactJS - Hooks",
       "icon": "fa-solid fa-link",
       "subItems": [
         { "title": "ReactJS - Introduction to Hooks", "page": "introToHooks" },
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "title": "Useful Resource",
+      "title": "ReactJS - Useful Resource",
       "icon": "fa-solid fa-link",
       "subItems": [
         { "title": "ReactJS - Quick Guide", "page": "quickGuide" },
