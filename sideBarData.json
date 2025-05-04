@@ -30,7 +30,7 @@
       ]
     },
     {
-      "title": "ReactJS Advanced",
+      "title": "ReactJS - Advanced",
       "icon": "fa-solid fa-link",
       "subItems": [
         { "title": "ReactJS - Accessibility", "page": "accessibility" },
