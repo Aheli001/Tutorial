@@ -39,7 +39,30 @@
         { "title": "ReactJS - Error Boundaries", "page": "errorBoundaries" },
         { "title": "ReactJS - Forwarding Refs", "page": "forwardingRefs" },
         { "title": "ReactJS - Fragments", "page": "fragments" },
-        { "title": "ReactJS - Higher-Order Components", "page": "higherOrderComponents" }
+        { "title": "ReactJS - Higher-Order Components", "page": "higherOrderComponents" },
+        { "title": "ReactJS - Integrating Other Libraries", "page": "integratingOtherLib" },
+        { "title": "ReactJS - Optimizing Performance", "page": "optimizingPerformance" },
+        { "title": "ReactJS - Portals", "page": "portals" },
+        { "title": "ReactJS - Profiler API", "page": "profilerApi" },
+        { "title": "ReactJS - React without ECMAScript", "page": "reactWithoutEchma" },
+        { "title": "ReactJS - React without JSX", "page": "reactWithoutJsx" },
+        { "title": "ReactJS - Reconcillation", "page": "reconcillation" },
+        { "title": "ReactJS - Refs and DOM", "page": "refsAndDom" },
+        { "title": "ReactJS - Render Props", "page": "renderProps" },
+        { "title": "ReactJS - Static Type Check", "page": "staticTypeCheck" },
+        { "title": "ReactJS - Strict Mode", "page": "strictMode" },
+        { "title": "ReactJS - Web Components", "page": "webComponents" }
+      ]
+    },
+    {
+      "title": "Useful Resource",
+      "icon": "fa-solid fa-link",
+      "subItems": [
+        { "title": "ReactJS - Quick Guide", "page": "quickGuide" },
+        { "title": "ReactJS - Cheatsheet", "page": "cheatsheet" },
+        { "title": "ReactJS - Axios Cheatsheet", "page": "axiosCheatsheet" },
+        { "title": "ReactJS - Useful Resource", "page": "usefulResource" },
+        { "title": "ReactJS - Discussion", "page": "discussion" }
       ]
     }
   ]

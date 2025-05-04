@@ -192,7 +192,12 @@ const scripts = [
   'hooks/useCallback.js', 'hooks/useMemo.js', 'hooks/customHooks.js',
   'advanced/accessibility.js', 'advanced/codeSplitting.js', 'advanced/context.js',
   'advanced/errorBoundaries.js', 'advanced/forwardingRefs.js', 'advanced/fragments.js',
-  'advanced/higherOrderComponents.js'
+  'advanced/higherOrderComponents.js', 'advanced/integratingOtherLib.js', 'advanced/optimizingPerform.js',
+  'advanced/portals.js', 'advanced/profilerApi.js', 'advanced/reactWithoutEchma.js',
+  'advanced/reactWithoutJsx.js', 'advanced/reconcillation.js', 'advanced/refsAndDom.js', 'advanced/renderProps.js',
+  'advanced/staticTypeCheck.js', 'advanced/strictMode.js', 'advanced/webComponents.js',
+  'usefulResource/axiosCheatsheet.js', 'usefulResource/cheatsheet.js', 'usefulResource/discussion.js',
+  'usefulResource/quickGuide.js', 'usefulResource/usefulResource.js'
 ];
 
 scripts.forEach(script => {
